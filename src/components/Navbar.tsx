@@ -34,12 +34,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#"
-          className="text-lg font-bold tracking-tight text-white"
-          aria-label="Facilito Agency"
-        >
-          Facilito<span className="text-primary">Agency</span>
+        <a href="#" aria-label="Facilito Agency">
+          <img src="/logo.png" alt="Facilito Agency" className="h-9 w-auto" />
         </a>
 
         {/* Desktop nav */}

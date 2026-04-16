@@ -14,9 +14,9 @@ export const en: Translations = {
   },
   hero: {
     badge: "Only 3 slots available this month — response in 24h",
-    line1: "Your professional",
-    line2: "website, live",
-    line3: "in 7 days.",
+    line1: "Your website,",
+    line2: "live in 7 days.",
+    line3: "Built for you.",
     description:
       "Done for you, no technical knowledge required. Websites, management systems, and automations for freelancers and small businesses.",
     cta: "Get your free quote",
@@ -26,7 +26,7 @@ export const en: Translations = {
     stats: [
       { value: "50+", label: "Happy clients" },
       { value: "7d", label: "Average delivery" },
-      { value: "€499", label: "Websites from" },
+      { value: "24h", label: "Free quote" },
     ],
   },
   services: {
@@ -36,7 +36,7 @@ export const en: Translations = {
       {
         number: "01",
         title: "Professional Website",
-        tag: "From €499 · live in 7 days",
+        tag: "Live in 7 days",
         description:
           "A site that works for you: attracts clients, communicates who you are, works on every device. Delivered in a week.",
         highlights: ["Custom design, never a template", "SEO optimized for Google", "CMS: update it yourself"],
@@ -45,7 +45,7 @@ export const en: Translations = {
       {
         number: "02",
         title: "Custom Management System",
-        tag: "By quote · from €799",
+        tag: "By quote",
         description:
           "Goodbye spreadsheets. Clients, orders, inventory — all in one software built for your workflow.",
         highlights: ["Access from any device", "Secure cloud data", "Scalable over time"],
@@ -71,8 +71,8 @@ export const en: Translations = {
         description: "From first call to live website: under 7 days. Not months.",
       },
       {
-        title: "Fixed prices",
-        description: "€499 for the base website. Everything included. Zero hidden costs.",
+        title: "Transparent pricing",
+        description: "Free, detailed quote before we start. You always know what you'll pay — no surprises.",
       },
       {
         title: "Built for you",
@@ -151,6 +151,8 @@ export const en: Translations = {
       namePlaceholder: "John Smith",
       email: "Email",
       emailPlaceholder: "john@example.com",
+      phone: "Phone number",
+      phonePlaceholder: "+44 7700 123456",
       service: "What do you need?",
       serviceOptions: [
         { value: "website", label: "Website" },
@@ -170,6 +172,7 @@ export const en: Translations = {
       errors: {
         nameRequired: "Name is required",
         emailInvalid: "Enter a valid email address",
+        phoneRequired: "Phone number is required",
         serviceRequired: "Please select a service",
         messageRequired: "Please describe your project briefly",
       },
@@ -180,7 +183,8 @@ export const en: Translations = {
     vatLabel: "VAT",
     vatNumber: "00000000000",
     rights: "All rights reserved.",
-    email: "info@facilitoagency.it",
+    email: "info@facilitoagency.com",
+    tiktok: "Follow us on TikTok",
     links: {
       privacy: "Privacy",
       terms: "Terms",

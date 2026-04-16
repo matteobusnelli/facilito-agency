@@ -11,6 +11,7 @@ const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
 type FormValues = {
   name: string;
   email: string;
+  phone: string;
   service: string;
   message: string;
 };
@@ -27,6 +28,7 @@ const ContactSection = () => {
   const schema = z.object({
     name: z.string().min(2, f.errors.nameRequired),
     email: z.string().email(f.errors.emailInvalid),
+    phone: z.string().min(5, f.errors.phoneRequired),
     service: z.string().min(1, f.errors.serviceRequired),
     message: z.string().min(10, f.errors.messageRequired),
   });
@@ -46,7 +48,11 @@ const ContactSection = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...data,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
           _hp: honeypotRef.current?.value ?? "",
         }),
       });
@@ -244,6 +250,24 @@ const ContactSection = () => {
                     />
                     {errors.email && (
                       <p className="text-destructive text-xs mt-1.5">{errors.email.message}</p>
+                    )}
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-sm font-medium mb-1.5" htmlFor="phone">
+                      {f.phone}
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      placeholder={f.phonePlaceholder}
+                      autoComplete="tel"
+                      {...register("phone")}
+                      className={inputCls}
+                    />
+                    {errors.phone && (
+                      <p className="text-destructive text-xs mt-1.5">{errors.phone.message}</p>
                     )}
                   </div>
 

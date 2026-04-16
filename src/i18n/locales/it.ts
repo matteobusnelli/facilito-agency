@@ -13,8 +13,8 @@ export const it = {
   hero: {
     badge: "Solo 3 slot disponibili questo mese — risposta in 24h",
     line1: "Il tuo sito web",
-    line2: "pronto in 7 giorni,",
-    line3: "da €499.",
+    line2: "pronto in 7 giorni.",
+    line3: "Fatto per te.",
     description:
       "Fatto completamente per te, senza tecnicismi. Siti web, gestionali e automazioni per freelance e piccole attività.",
     cta: "Ottieni il preventivo gratis",
@@ -24,7 +24,7 @@ export const it = {
     stats: [
       { value: "50+", label: "Clienti soddisfatti" },
       { value: "7 gg", label: "Consegna media" },
-      { value: "€499", label: "Siti web da" },
+      { value: "24h", label: "Preventivo gratuito" },
     ],
   },
   services: {
@@ -34,7 +34,7 @@ export const it = {
       {
         number: "01",
         title: "Sito Web Professionale",
-        tag: "Da €499 · online in 7 giorni",
+        tag: "Online in 7 giorni",
         description:
           "Un sito che lavora per te: porta clienti, comunica chi sei, funziona su ogni dispositivo. Consegnato in una settimana.",
         highlights: ["Design su misura, mai template", "Ottimizzato per Google (SEO)", "CMS: aggiornalo da solo"],
@@ -43,7 +43,7 @@ export const it = {
       {
         number: "02",
         title: "Gestionale su Misura",
-        tag: "Su preventivo · da €799",
+        tag: "Su preventivo",
         description:
           "Basta fogli Excel. Clienti, ordini, magazzino — tutto in un software pensato per il tuo modo di lavorare.",
         highlights: ["Accessibile da qualsiasi dispositivo", "Dati al sicuro nel cloud", "Scalabile nel tempo"],
@@ -69,8 +69,8 @@ export const it = {
         description: "Dalla prima chiamata al sito online: meno di 7 giorni. Non mesi.",
       },
       {
-        title: "Prezzi fissi",
-        description: "€499 per il sito base. Tutto incluso. Zero costi nascosti.",
+        title: "Prezzi trasparenti",
+        description: "Preventivo gratuito e dettagliato prima di iniziare. Sai sempre quanto spendi, senza sorprese.",
       },
       {
         title: "Fatto solo per te",
@@ -149,6 +149,8 @@ export const it = {
       namePlaceholder: "Mario Rossi",
       email: "Email",
       emailPlaceholder: "mario@esempio.it",
+      phone: "Numero di telefono",
+      phonePlaceholder: "+39 333 123 4567",
       service: "Di cosa hai bisogno?",
       serviceOptions: [
         { value: "website", label: "Sito web" },
@@ -168,6 +170,7 @@ export const it = {
       errors: {
         nameRequired: "Il nome è obbligatorio",
         emailInvalid: "Inserisci un indirizzo email valido",
+        phoneRequired: "Il numero di telefono è obbligatorio",
         serviceRequired: "Seleziona un servizio",
         messageRequired: "Descrivi brevemente il progetto",
       },
@@ -178,7 +181,8 @@ export const it = {
     vatLabel: "P.IVA",
     vatNumber: "00000000000",
     rights: "Tutti i diritti riservati.",
-    email: "info@facilitoagency.it",
+    email: "info@facilitoagency.com",
+    tiktok: "Seguici su TikTok",
     links: {
       privacy: "Privacy",
       terms: "Termini",

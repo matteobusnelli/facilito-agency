@@ -15,8 +15,8 @@ export const es: Translations = {
   hero: {
     badge: "Solo 3 plazas disponibles este mes — respuesta en 24h",
     line1: "Tu sitio web",
-    line2: "listo en 7 días,",
-    line3: "desde €499.",
+    line2: "listo en 7 días.",
+    line3: "Hecho para ti.",
     description:
       "Hecho para ti, sin tecnicismos. Sitios web, gestores y automatizaciones para freelancers y pequeños negocios.",
     cta: "Obtén el presupuesto gratis",
@@ -26,7 +26,7 @@ export const es: Translations = {
     stats: [
       { value: "50+", label: "Clientes satisfechos" },
       { value: "7d", label: "Entrega media" },
-      { value: "€499", label: "Sitios web desde" },
+      { value: "24h", label: "Presupuesto gratuito" },
     ],
   },
   services: {
@@ -36,7 +36,7 @@ export const es: Translations = {
       {
         number: "01",
         title: "Sitio Web Profesional",
-        tag: "Desde €499 · online en 7 días",
+        tag: "Online en 7 días",
         description:
           "Un sitio que trabaja por ti: atrae clientes, comunica quién eres, funciona en cualquier dispositivo. Entregado en una semana.",
         highlights: ["Diseño a medida, nunca plantilla", "Optimizado para Google (SEO)", "CMS: actualízalo tú solo"],
@@ -45,7 +45,7 @@ export const es: Translations = {
       {
         number: "02",
         title: "Gestor a Medida",
-        tag: "Por presupuesto · desde €799",
+        tag: "Por presupuesto",
         description:
           "Adiós hojas de cálculo. Clientes, pedidos, inventario — todo en un software pensado para tu forma de trabajar.",
         highlights: ["Acceso desde cualquier dispositivo", "Datos seguros en la nube", "Escalable en el tiempo"],
@@ -71,8 +71,8 @@ export const es: Translations = {
         description: "De la primera llamada al sitio online: menos de 7 días. No meses.",
       },
       {
-        title: "Precios fijos",
-        description: "€499 por el sitio base. Todo incluido. Cero costes ocultos.",
+        title: "Precios transparentes",
+        description: "Presupuesto gratuito y detallado antes de empezar. Siempre sabrás lo que pagas, sin sorpresas.",
       },
       {
         title: "Hecho solo para ti",
@@ -151,6 +151,8 @@ export const es: Translations = {
       namePlaceholder: "Juan García",
       email: "Email",
       emailPlaceholder: "juan@ejemplo.es",
+      phone: "Número de teléfono",
+      phonePlaceholder: "+34 612 345 678",
       service: "¿Qué necesitas?",
       serviceOptions: [
         { value: "website", label: "Sitio web" },
@@ -170,6 +172,7 @@ export const es: Translations = {
       errors: {
         nameRequired: "El nombre es obligatorio",
         emailInvalid: "Introduce un email válido",
+        phoneRequired: "El número de teléfono es obligatorio",
         serviceRequired: "Selecciona un servicio",
         messageRequired: "Describe brevemente tu proyecto",
       },
@@ -180,7 +183,8 @@ export const es: Translations = {
     vatLabel: "IVA",
     vatNumber: "00000000000",
     rights: "Todos los derechos reservados.",
-    email: "info@facilitoagency.it",
+    email: "info@facilitoagency.com",
+    tiktok: "Síguenos en TikTok",
     links: {
       privacy: "Privacidad",
       terms: "Términos",
