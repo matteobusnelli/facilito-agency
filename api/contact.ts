@@ -117,12 +117,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     email,
     service,
     message,
-    _hp, // honeypot — bots fill this, humans don't
+    website, // honeypot — bots fill this, humans don't
   } = (req.body ?? {}) as Record<string, string | undefined>;
 
   // ── Honeypot check ──
   // Return fake success so bots don't retry
-  if (_hp) {
+  if (website) {
+    console.warn("[contact] Honeypot triggered — request blocked. value:", website);
     return res.status(200).json({ success: true });
   }
 

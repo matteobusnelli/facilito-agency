@@ -53,7 +53,7 @@ const ContactSection = () => {
           phone: data.phone,
           service: data.service,
           message: data.message,
-          _hp: honeypotRef.current?.value ?? "",
+          website: honeypotRef.current?.value ?? "",
         }),
       });
 
@@ -198,14 +198,16 @@ const ContactSection = () => {
                   className="p-8 rounded-2xl bg-background border border-border space-y-5"
                   noValidate
                 >
-                  {/* Honeypot */}
-                  <div aria-hidden="true" className="absolute opacity-0 pointer-events-none h-0 overflow-hidden">
+                  {/* Honeypot — off-screen, not zero-height, so Chrome autofill ignores it */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                    <label htmlFor="__trap">Leave this empty</label>
                     <input
                       ref={honeypotRef}
+                      id="__trap"
                       type="text"
-                      name="_hp"
+                      name="website"
                       tabIndex={-1}
-                      autoComplete="off"
+                      autoComplete="new-password"
                     />
                   </div>
 
