@@ -32,6 +32,7 @@ function parseRecipients(raw: string | undefined): string[] {
 function buildEmailHtml(data: {
   name: string;
   email: string;
+  phone: string;
   service: string;
   message: string;
 }): string {
@@ -59,6 +60,12 @@ function buildEmailHtml(data: {
         <td style="padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:12px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Email</td>
         <td style="padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:14px;">
           <a href="mailto:${data.email}" style="color:#7c5ef7;text-decoration:none;">${data.email}</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:12px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Telefono</td>
+        <td style="padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:14px;">
+          <a href="tel:${data.phone}" style="color:#7c5ef7;text-decoration:none;">${data.phone}</a>
         </td>
       </tr>
       <tr>
@@ -115,6 +122,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const {
     name,
     email,
+    phone,
     service,
     message,
     website, // honeypot — bots fill this, humans don't
@@ -159,6 +167,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: buildEmailHtml({
         name: name.trim(),
         email: email.trim(),
+        phone: phone?.trim() ?? "",
         service: serviceLabel,
         message: message.trim(),
       }),
