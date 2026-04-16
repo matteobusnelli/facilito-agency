@@ -21,6 +21,7 @@ export const en: Translations = {
       "Websites, management systems, and automations built for freelancers and small businesses. No bureaucracy, no surprises.",
     cta: "Request a quote",
     secondary: "Explore services",
+    bookCall: "Book a free call",
     trust: ["Free quote", "Response within 24h", "Fixed, transparent pricing"],
     stats: [
       { value: "50+", label: "Happy clients" },
@@ -136,6 +137,8 @@ export const en: Translations = {
     guarantee: "Free quote within 24h",
     noSpam: "Zero spam, zero sales pressure",
     fastResponse: "Quick and direct response",
+    bookCall: "Prefer to talk directly?",
+    bookCallCta: "Book a call",
     form: {
       name: "Full name",
       namePlaceholder: "John Smith",
@@ -155,6 +158,8 @@ export const en: Translations = {
       successTitle: "Request sent!",
       successMessage:
         "We'll get back to you within 24 hours. Check your spam folder if you don't hear from us.",
+      errorMessage: "Something went wrong. Please try again or contact us directly.",
+      sendAnother: "Send another request",
       errors: {
         nameRequired: "Name is required",
         emailInvalid: "Enter a valid email address",

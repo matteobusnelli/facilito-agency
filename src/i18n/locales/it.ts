@@ -19,6 +19,7 @@ export const it = {
       "Siti web, gestionali e automazioni su misura per freelance e piccole attività. Senza burocrazia, senza sorprese.",
     cta: "Richiedi un preventivo",
     secondary: "Scopri i servizi",
+    bookCall: "Prenota una chiamata gratuita",
     trust: ["Preventivo gratuito", "Risposta entro 24h", "Prezzi fissi e trasparenti"],
     stats: [
       { value: "50+", label: "Clienti soddisfatti" },
@@ -133,6 +134,8 @@ export const it = {
     guarantee: "Preventivo gratuito entro 24h",
     noSpam: "Zero spam, zero pressioni di vendita",
     fastResponse: "Risposta rapida e diretta",
+    bookCall: "Preferisci parlare direttamente?",
+    bookCallCta: "Prenota una chiamata",
     form: {
       name: "Nome e cognome",
       namePlaceholder: "Mario Rossi",
@@ -152,6 +155,8 @@ export const it = {
       successTitle: "Richiesta inviata!",
       successMessage:
         "Ti risponderemo entro 24 ore. Controlla anche la cartella spam se non ricevi notizie.",
+      errorMessage: "Qualcosa è andato storto. Riprova o scrivici direttamente.",
+      sendAnother: "Invia un'altra richiesta",
       errors: {
         nameRequired: "Il nome è obbligatorio",
         emailInvalid: "Inserisci un indirizzo email valido",

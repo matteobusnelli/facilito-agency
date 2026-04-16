@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar } from "lucide-react";
 import { useTranslation } from "@/i18n";
+
+const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -54,7 +56,7 @@ const HeroSection = () => {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-16">
+          <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
               href="#contatti"
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-all"
@@ -70,6 +72,21 @@ const HeroSection = () => {
               {t.hero.secondary}
             </a>
           </motion.div>
+
+          {/* Calendly secondary CTA — only when VITE_CALENDLY_URL is set */}
+          {CALENDLY_URL && (
+            <motion.div {...fadeUp(0.35)} className="mb-10">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white/80 transition-colors"
+              >
+                <Calendar className="w-3.5 h-3.5" />
+                {t.hero.bookCall}
+              </a>
+            </motion.div>
+          )}
 
           {/* Trust badges */}
           <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-x-8 gap-y-3">

@@ -21,6 +21,7 @@ export const es: Translations = {
       "Sitios web, gestores y automatizaciones a medida para freelancers y pequeños negocios. Sin burocracia, sin sorpresas.",
     cta: "Pide un presupuesto",
     secondary: "Ver servicios",
+    bookCall: "Reserva una llamada gratuita",
     trust: ["Presupuesto gratuito", "Respuesta en 24h", "Precios fijos y transparentes"],
     stats: [
       { value: "50+", label: "Clientes satisfechos" },
@@ -136,6 +137,8 @@ export const es: Translations = {
     guarantee: "Presupuesto gratuito en 24h",
     noSpam: "Cero spam, cero presión de ventas",
     fastResponse: "Respuesta rápida y directa",
+    bookCall: "¿Prefieres hablar directamente?",
+    bookCallCta: "Reserva una llamada",
     form: {
       name: "Nombre y apellido",
       namePlaceholder: "Juan García",
@@ -155,6 +158,8 @@ export const es: Translations = {
       successTitle: "¡Solicitud enviada!",
       successMessage:
         "Te responderemos en 24 horas. Revisa también tu carpeta de spam si no recibes noticias.",
+      errorMessage: "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
+      sendAnother: "Enviar otra solicitud",
       errors: {
         nameRequired: "El nombre es obligatorio",
         emailInvalid: "Introduce un email válido",

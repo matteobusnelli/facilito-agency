@@ -82,9 +82,43 @@ transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
 ```
 Always use `viewport={{ once: true }}` — animations fire once on scroll into view.
 
-### Contact form (`ContactSection.tsx`)
+### Contact form & email (`ContactSection.tsx` + `api/contact.ts`)
 
-Uses React Hook Form + Zod for validation. On submit: constructs a `mailto:` URL with pre-filled subject/body and opens the user's email client. No backend required. Shows animated success state after submission.
+The form posts JSON to `/api/contact` (Vercel serverless function). The function:
+1. Rate-limits by IP (3 req / 60s, per serverless instance)
+2. Checks a honeypot field (`_hp`) — bots that fill it get a fake 200
+3. Validates name/email/message server-side
+4. Parses `CONTACT_EMAILS` env var (comma-separated) into a recipient list
+5. Sends via **Resend** (`resend` npm package) using `RESEND_API_KEY`
+6. Returns `{ success: true }` or `{ error: "..." }`
+
+The frontend handles three states: `idle` → `success` / `error`. On success, a Calendly booking CTA is optionally shown.
+
+**Email service: Resend** — free tier is 3,000 emails/month, 100/day. No credit card required.
+
+### Environment variables
+
+See `.env.example` for the full reference. Copy it to `.env.local` for local dev.
+
+| Variable | Where | Description |
+|---|---|---|
+| `RESEND_API_KEY` | Server only | From resend.com dashboard |
+| `RESEND_FROM_EMAIL` | Server only | `Name <email@domain.com>` format. Use `onboarding@resend.dev` until domain is verified. |
+| `CONTACT_EMAILS` | Server only | Comma-separated recipient list |
+| `VITE_CALENDLY_URL` | Client (Vite) | Calendly booking link. Leave empty to hide the CTA entirely. |
+
+**⚠️ Never add `VITE_` prefix to `RESEND_API_KEY` or `CONTACT_EMAILS`** — that would expose them in the frontend bundle.
+
+**Domain verification (for production):** Register your domain in the Resend dashboard → add DNS records → then set `RESEND_FROM_EMAIL=Facilito Agency <info@facilitoagency.it>`.
+
+### Calendly
+
+`VITE_CALENDLY_URL` drives two CTAs:
+- A subtle link below the hero buttons in `HeroSection`
+- A boxed CTA in the left column of `ContactSection`
+- A post-submission upsell in the success state of `ContactSection`
+
+Both are conditionally rendered — if the env var is empty, nothing is shown.
 
 ### Providers (`App.tsx`)
 
