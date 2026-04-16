@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, ArrowRight, BadgeCheck, Zap, ShieldCheck, Calendar, AlertCircle } from "lucide-react";
 import { useTranslation } from "@/i18n";
 
-// Exposed via Vite — set VITE_CALENDLY_URL in your .env
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
 
 type FormValues = {
@@ -23,7 +22,6 @@ const ContactSection = () => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
 
-  // Honeypot ref — hidden from real users, bots tend to fill it
   const honeypotRef = useRef<HTMLInputElement>(null);
 
   const schema = z.object({
@@ -49,7 +47,7 @@ const ContactSection = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
-          _hp: honeypotRef.current?.value ?? "", // honeypot value
+          _hp: honeypotRef.current?.value ?? "",
         }),
       });
 
@@ -89,6 +87,15 @@ const ContactSection = () => {
             transition={{ duration: 0.5 }}
             className="md:sticky md:top-24"
           >
+            {/* Urgency signal */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-500/25 bg-amber-500/[0.08] text-amber-700 dark:text-amber-300/90 text-xs font-semibold mb-6">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+              </span>
+              {t.contact.urgency}
+            </div>
+
             <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
               Contatti
             </p>
@@ -111,7 +118,7 @@ const ContactSection = () => {
               ))}
             </ul>
 
-            {/* Calendly CTA — shown only when VITE_CALENDLY_URL is set */}
+            {/* Calendly CTA */}
             {CALENDLY_URL && (
               <div className="mt-10 p-5 rounded-xl border border-primary/20 bg-primary/[0.04]">
                 <p className="text-sm font-semibold mb-1">{t.contact.bookCall}</p>
@@ -154,7 +161,6 @@ const ContactSection = () => {
                     {f.successMessage}
                   </p>
 
-                  {/* Calendly upsell on success */}
                   {CALENDLY_URL && (
                     <a
                       href={CALENDLY_URL}
@@ -186,7 +192,7 @@ const ContactSection = () => {
                   className="p-8 rounded-2xl bg-background border border-border space-y-5"
                   noValidate
                 >
-                  {/* Honeypot — hidden from users, visible to bots */}
+                  {/* Honeypot */}
                   <div aria-hidden="true" className="absolute opacity-0 pointer-events-none h-0 overflow-hidden">
                     <input
                       ref={honeypotRef}
@@ -284,7 +290,7 @@ const ContactSection = () => {
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full h-12 rounded-xl bg-primary text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:bg-primary/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-                    style={{ boxShadow: "0 8px 24px -4px hsl(252 91% 63% / 0.3)" }}
+                    style={{ boxShadow: "0 8px 24px -4px hsl(252 91% 63% / 0.35)" }}
                   >
                     {isSubmitting ? (
                       <>
@@ -298,6 +304,10 @@ const ContactSection = () => {
                       </>
                     )}
                   </button>
+
+                  <p className="text-center text-xs text-muted-foreground">
+                    {t.contact.noSpam}
+                  </p>
                 </motion.form>
               )}
             </AnimatePresence>

@@ -6,7 +6,7 @@ const ProcessSection = () => {
   const { heading, subheading, steps } = t.process;
 
   return (
-    <section id="come-funziona" className="py-28 md:py-36 bg-background">
+    <section id="come-funziona" className="py-28 md:py-36 bg-surface">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -55,7 +55,13 @@ const ProcessSection = () => {
                 <span className="sm:hidden inline-block text-4xl font-black text-foreground/10 mb-1">
                   {step.number}
                 </span>
-                <h3 className="text-xl font-bold tracking-tight mb-2">{step.title}</h3>
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="text-xl font-bold tracking-tight">{step.title}</h3>
+                  {/* Duration pill — shows how fast each step is */}
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                    {step.duration}
+                  </span>
+                </div>
                 <p className="text-muted-foreground leading-relaxed max-w-lg">{step.description}</p>
               </div>
             </motion.div>

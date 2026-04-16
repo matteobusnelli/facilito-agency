@@ -13,102 +13,108 @@ export const es: Translations = {
     cta: "Presupuesto gratis",
   },
   hero: {
-    badge: "Respuesta en 24h — sin compromiso",
-    line1: "Lo digital",
-    line2: "que realmente",
-    line3: "necesitas.",
+    badge: "Solo 3 plazas disponibles este mes — respuesta en 24h",
+    line1: "Tu sitio web",
+    line2: "listo en 7 días,",
+    line3: "desde €499.",
     description:
-      "Sitios web, gestores y automatizaciones a medida para freelancers y pequeños negocios. Sin burocracia, sin sorpresas.",
-    cta: "Pide un presupuesto",
-    secondary: "Ver servicios",
-    bookCall: "Reserva una llamada gratuita",
-    trust: ["Presupuesto gratuito", "Respuesta en 24h", "Precios fijos y transparentes"],
+      "Hecho para ti, sin tecnicismos. Sitios web, gestores y automatizaciones para freelancers y pequeños negocios.",
+    cta: "Obtén el presupuesto gratis",
+    secondary: "Cómo funciona ↓",
+    bookCall: "O reserva una llamada gratuita",
+    trust: ["Presupuesto gratuito en 24h", "Precio fijo, sin sorpresas", "Online en 7 días"],
     stats: [
       { value: "50+", label: "Clientes satisfechos" },
       { value: "7d", label: "Entrega media" },
-      { value: "100%", label: "Proyectos completados" },
+      { value: "€499", label: "Sitios web desde" },
     ],
   },
   services: {
-    heading: "Lo que hacemos por ti",
-    subheading: "Tres soluciones concretas. Sin complicaciones.",
+    heading: "Lo que obtienes con nosotros",
+    subheading: "Soluciones concretas. Precios fijos. Resultados en pocos días.",
     items: [
       {
         number: "01",
-        title: "Sitios Web",
-        tag: "Desde €499",
+        title: "Sitio Web Profesional",
+        tag: "Desde €499 · online en 7 días",
         description:
-          "Un sitio profesional que te representa y atrae nuevos clientes. Responsive, rápido y fácil de actualizar.",
-        highlights: ["Diseño personalizado", "Optimizado para Google", "CMS incluido"],
+          "Un sitio que trabaja por ti: atrae clientes, comunica quién eres, funciona en cualquier dispositivo. Entregado en una semana.",
+        highlights: ["Diseño a medida, nunca plantilla", "Optimizado para Google (SEO)", "CMS: actualízalo tú solo"],
+        cta: "Quiero mi sitio web →",
       },
       {
         number: "02",
-        title: "Gestores a Medida",
-        tag: "Por presupuesto",
+        title: "Gestor a Medida",
+        tag: "Por presupuesto · desde €799",
         description:
-          "Software diseñado para tu flujo de trabajo. Gestiona clientes, pedidos, inventario — sin hojas de cálculo.",
-        highlights: ["Acceso desde cualquier dispositivo", "Datos seguros", "Escalable en el tiempo"],
+          "Adiós hojas de cálculo. Clientes, pedidos, inventario — todo en un software pensado para tu forma de trabajar.",
+        highlights: ["Acceso desde cualquier dispositivo", "Datos seguros en la nube", "Escalable en el tiempo"],
+        cta: "Pedir presupuesto →",
       },
       {
         number: "03",
         title: "Automatizaciones",
-        tag: "Ahorra horas cada semana",
+        tag: "Ahorra 5+ horas a la semana",
         description:
-          "Facturas automáticas, emails de seguimiento, informes. Automatiza las tareas que te roban tiempo cada día.",
-        highlights: ["Integración con tus herramientas", "Flujos personalizados", "Soporte continuo"],
+          "Facturas automáticas, emails de seguimiento, informes. Deja de hacer manualmente lo que puede hacer un ordenador.",
+        highlights: ["Se integra con tus herramientas", "Flujos completamente personalizados", "Soporte continuo"],
+        cta: "Automatiza mi trabajo →",
       },
     ],
   },
   why: {
     heading: "Por qué elegir Facilito",
-    subheading:
-      "Somos un pequeño equipo con un objetivo claro: ayudarte a obtener resultados sin complicarte la vida.",
+    subheading: "Un equipo pequeño, objetivos claros: resultados concretos en poco tiempo, sin estrés.",
     items: [
       {
-        title: "Rápidos",
-        description: "Del presupuesto a la entrega en tiempo récord. Sin esperas de meses.",
+        title: "Rápidos de verdad",
+        description: "De la primera llamada al sitio online: menos de 7 días. No meses.",
       },
       {
-        title: "Claros",
-        description: "Precios fijos, comunicación directa. Siempre sabes lo que estás pagando.",
+        title: "Precios fijos",
+        description: "€499 por el sitio base. Todo incluido. Cero costes ocultos.",
       },
       {
-        title: "A medida",
-        description: "Sin plantillas de copia y pega. Cada proyecto nace de tus necesidades reales.",
+        title: "Hecho solo para ti",
+        description: "Sin plantillas prefabricadas. Cada proyecto nace de tus necesidades reales.",
       },
       {
-        title: "Cercanos",
-        description: "No desaparecemos tras la entrega. Estamos disponibles cuando nos necesitas.",
+        title: "Siempre presentes",
+        description: "No desaparecemos tras la entrega. Un contacto directo, siempre.",
       },
     ],
   },
   process: {
     heading: "Cómo funciona",
-    subheading: "Tres pasos de la idea al producto terminado.",
+    subheading: "De la idea al lanzamiento en 3 pasos. Más sencillo de lo que crees.",
     steps: [
       {
         number: "01",
-        title: "Cuéntanos qué necesitas",
+        title: "Cuéntanos tu proyecto",
+        duration: "~15 min",
         description:
-          "Una llamada de 15 minutos o un mensaje. Sin compromiso. Entendemos tu proyecto y te enviamos un presupuesto gratuito.",
+          "Una llamada rápida o un mensaje. Sin compromiso. Te enviamos un presupuesto gratuito en 24 horas.",
       },
       {
         number: "02",
-        title: "Construimos juntos",
+        title: "Nosotros construimos todo",
+        duration: "5–7 días",
         description:
-          "Diseñamos y desarrollamos manteniéndote informado en cada fase. Sin tecnicismos, solo avances concretos.",
+          "Diseño, desarrollo, contenidos. Estamos en contacto en cada paso — sin tecnicismos, solo resultados.",
       },
       {
         number: "03",
-        title: "Vas online",
+        title: "Estás online",
+        duration: "30 min setup",
         description:
-          "Entregamos, te formamos si hace falta y seguimos disponibles. Tu proyecto está listo para trabajar por ti.",
+          "Publicamos juntos. Te mostramos cómo gestionar el sitio en 30 minutos y seguimos disponibles.",
       },
     ],
   },
   testimonials: {
-    heading: "Quienes ya han trabajado con nosotros",
-    subheading: "No son nuestras palabras. Son las suyas.",
+    heading: "Lo que dicen de nosotros",
+    subheading: "Clientes reales. Resultados reales.",
+    cta: "Únete a ellos — presupuesto gratis",
     items: [
       {
         name: "Marco R.",
@@ -131,12 +137,13 @@ export const es: Translations = {
     ],
   },
   contact: {
-    heading: "Hablemos.",
+    heading: "El presupuesto es gratis.",
     subheading:
-      "Cuéntanos tu proyecto. Recibe un presupuesto gratuito en 24 horas. Sin compromiso, sin presión.",
+      "Mándanos un mensaje — te responderemos en 24 horas con una oferta a medida. Sin spam, sin presión.",
+    urgency: "Aceptando nuevos proyectos · plazas limitadas",
     guarantee: "Presupuesto gratuito en 24h",
-    noSpam: "Cero spam, cero presión de ventas",
-    fastResponse: "Respuesta rápida y directa",
+    noSpam: "Cero spam, nunca",
+    fastResponse: "Respuesta el mismo día",
     bookCall: "¿Prefieres hablar directamente?",
     bookCallCta: "Reserva una llamada",
     form: {
@@ -153,9 +160,9 @@ export const es: Translations = {
       ],
       message: "Cuéntanos el proyecto",
       messagePlaceholder: "Describe brevemente lo que buscas...",
-      submit: "Enviar solicitud",
+      submit: "Envíame un presupuesto gratis",
       submitting: "Enviando...",
-      successTitle: "¡Solicitud enviada!",
+      successTitle: "¡Mensaje recibido!",
       successMessage:
         "Te responderemos en 24 horas. Revisa también tu carpeta de spam si no recibes noticias.",
       errorMessage: "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",

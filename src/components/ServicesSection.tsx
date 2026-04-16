@@ -53,9 +53,15 @@ const ServicesSection = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                   {items[0].title}
                 </h3>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base">
+                <p className="text-white/60 leading-relaxed text-sm md:text-base mb-6">
                   {items[0].description}
                 </p>
+                <a
+                  href="#contatti"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                >
+                  {items[0].cta}
+                </a>
               </div>
               <ul className="space-y-2.5 mt-2 md:mt-8">
                 {items[0].highlights.map((h) => (
@@ -81,7 +87,7 @@ const ServicesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: (i + 1) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className={cn(
-                  "group relative p-8 rounded-2xl border border-border bg-background overflow-hidden",
+                  "group relative p-8 rounded-2xl border border-border bg-background overflow-hidden flex flex-col",
                   "hover:border-primary/20 hover:shadow-[0_8px_30px_-8px_hsl(252_91%_63%_/_0.12)] transition-all duration-300"
                 )}
               >
@@ -92,7 +98,7 @@ const ServicesSection = () => {
                   {service.number}
                 </span>
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
@@ -103,7 +109,7 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-6">
                     {service.highlights.map((h) => (
                       <li key={h} className="flex items-center gap-2.5 text-sm text-muted-foreground">
                         <Check className="w-3.5 h-3.5 text-primary shrink-0" />
@@ -111,6 +117,12 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href="#contatti"
+                    className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {service.cta}
+                  </a>
                 </div>
               </motion.div>
             );

@@ -142,6 +142,16 @@
   }
 }
 
+/* CTA ring pulse — draws eye to primary action */
+@keyframes cta-ring {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(252 91% 63% / 0); }
+  50% { box-shadow: 0 0 0 6px hsl(252 91% 63% / 0.18); }
+}
+
+.animate-cta-ring {
+  animation: cta-ring 2.4s ease-in-out infinite;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: hsl(var(--muted)); }

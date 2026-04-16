@@ -9,7 +9,7 @@ const WhyUsSection = () => {
   const { heading, subheading, items } = t.why;
 
   return (
-    <section className="py-28 md:py-36 bg-surface">
+    <section className="py-28 md:py-36 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
           {/* Left: sticky header */}
@@ -45,12 +45,12 @@ const WhyUsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="p-6 rounded-2xl bg-background border border-border"
+                  className="p-6 rounded-2xl bg-surface border border-border"
                 >
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="w-4.5 h-4.5 text-primary" strokeWidth={2} />
                   </div>
-                  <h3 className="font-semibold text-base mb-2">{item.title}</h3>
+                  <h3 className="font-bold text-base mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </motion.div>
               );

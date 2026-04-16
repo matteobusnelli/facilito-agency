@@ -15,32 +15,41 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-hero bg-dot-grid overflow-hidden">
-      {/* Ambient glow */}
+      {/* Ambient glows */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 right-0 w-[700px] h-[700px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(252 91% 63% / 0.12) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(252 91% 63% / 0.15) 0%, transparent 65%)" }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute bottom-0 -left-32 w-[500px] h-[500px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(220 90% 58% / 0.07) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(220 90% 58% / 0.08) 0%, transparent 70%)" }}
+      />
+      {/* Accent glow under CTA area */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/4 w-[600px] h-[300px] -translate-y-1/2 rounded-full"
+        style={{ background: "radial-gradient(ellipse, hsl(252 91% 63% / 0.06) 0%, transparent 70%)" }}
       />
 
       <div className="container mx-auto px-6 relative z-10 pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="max-w-4xl">
-          {/* Badge */}
+          {/* Urgency badge — amber to signal scarcity */}
           <motion.div {...fadeUp(0)} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.12] bg-white/[0.06] text-white/70 text-sm font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/25 bg-amber-500/[0.08] text-amber-300/90 text-sm font-medium">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+              </span>
               {t.hero.badge}
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — price anchor front and centre */}
           <motion.h1
             {...fadeUp(0.1)}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6"
+            className="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.05] tracking-tight text-white mb-6"
           >
             {t.hero.line1}{" "}
             <span className="block sm:inline">{t.hero.line2}{" "}</span>
@@ -57,30 +66,33 @@ const HeroSection = () => {
 
           {/* CTAs */}
           <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-6">
+            {/* Primary CTA — pulsing ring for attention */}
             <a
               href="#contatti"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-all"
-              style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.35)" }}
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-all"
+              style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.45)" }}
             >
+              <span className="absolute inset-0 rounded-xl animate-cta-ring" aria-hidden />
               {t.hero.cta}
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
+            {/* Secondary CTA — much weaker, doesn't compete */}
             <a
-              href="#servizi"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/[0.14] text-white/70 font-medium text-base hover:border-white/30 hover:text-white transition-all"
+              href="#come-funziona"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white/40 font-medium text-base hover:text-white/70 transition-colors"
             >
               {t.hero.secondary}
             </a>
           </motion.div>
 
-          {/* Calendly secondary CTA — only when VITE_CALENDLY_URL is set */}
+          {/* Calendly link */}
           {CALENDLY_URL && (
             <motion.div {...fadeUp(0.35)} className="mb-10">
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white/80 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 {t.hero.bookCall}
@@ -99,7 +111,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Stats */}
+        {/* Stats — now includes price anchor */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

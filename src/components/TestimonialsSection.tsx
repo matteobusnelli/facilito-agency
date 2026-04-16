@@ -15,7 +15,7 @@ const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
             Clienti
@@ -24,6 +24,22 @@ const TestimonialsSection = () => {
             {heading}
           </h2>
           <p className="text-white/50 max-w-md mx-auto">{subheading}</p>
+        </motion.div>
+
+        {/* Aggregate rating strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="flex items-center justify-center gap-2 mb-14"
+        >
+          <div className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+            ))}
+          </div>
+          <span className="text-white/60 text-sm font-medium">5.0 · 50+ recensioni</span>
         </motion.div>
 
         {/* Cards */}
@@ -40,12 +56,12 @@ const TestimonialsSection = () => {
               {/* Stars */}
               <div className="flex gap-1 mb-5">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-white/75 leading-relaxed text-sm mb-6">
+              <p className="text-white/80 leading-relaxed text-sm mb-6">
                 &ldquo;{item.text}&rdquo;
               </p>
 
@@ -57,6 +73,23 @@ const TestimonialsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA nudge after social proof */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="text-center mt-14"
+        >
+          <a
+            href="#contatti"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
+            style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.4)" }}
+          >
+            {t.testimonials.cta}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

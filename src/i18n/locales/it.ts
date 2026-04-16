@@ -11,101 +11,108 @@ export const it = {
     cta: "Preventivo gratuito",
   },
   hero: {
-    badge: "Risposta in 24h — nessun impegno",
-    line1: "Il digitale",
-    line2: "che ti serve",
-    line3: "davvero.",
+    badge: "Solo 3 slot disponibili questo mese — risposta in 24h",
+    line1: "Il tuo sito web",
+    line2: "pronto in 7 giorni,",
+    line3: "da €499.",
     description:
-      "Siti web, gestionali e automazioni su misura per freelance e piccole attività. Senza burocrazia, senza sorprese.",
-    cta: "Richiedi un preventivo",
-    secondary: "Scopri i servizi",
-    bookCall: "Prenota una chiamata gratuita",
-    trust: ["Preventivo gratuito", "Risposta entro 24h", "Prezzi fissi e trasparenti"],
+      "Fatto completamente per te, senza tecnicismi. Siti web, gestionali e automazioni per freelance e piccole attività.",
+    cta: "Ottieni il preventivo gratis",
+    secondary: "Come funziona ↓",
+    bookCall: "Oppure prenota una chiamata gratuita",
+    trust: ["Preventivo gratuito in 24h", "Prezzo fisso, nessuna sorpresa", "Online in 7 giorni"],
     stats: [
       { value: "50+", label: "Clienti soddisfatti" },
-      { value: "7gg", label: "Consegna media" },
-      { value: "100%", label: "Progetti completati" },
+      { value: "7 gg", label: "Consegna media" },
+      { value: "€499", label: "Siti web da" },
     ],
   },
   services: {
-    heading: "Cosa facciamo per te",
-    subheading: "Tre soluzioni concrete. Nessuna complicazione.",
+    heading: "Cosa ottieni con noi",
+    subheading: "Soluzioni concrete. Prezzi fissi. Risultati in pochi giorni.",
     items: [
       {
         number: "01",
-        title: "Siti Web",
-        tag: "Da €499",
+        title: "Sito Web Professionale",
+        tag: "Da €499 · online in 7 giorni",
         description:
-          "Un sito professionale che ti rappresenta e porta nuovi clienti. Responsive, veloce, facile da aggiornare.",
-        highlights: ["Design personalizzato", "Ottimizzato per Google", "CMS incluso"],
+          "Un sito che lavora per te: porta clienti, comunica chi sei, funziona su ogni dispositivo. Consegnato in una settimana.",
+        highlights: ["Design su misura, mai template", "Ottimizzato per Google (SEO)", "CMS: aggiornalo da solo"],
+        cta: "Voglio il mio sito →",
       },
       {
         number: "02",
-        title: "Gestionali su Misura",
-        tag: "Su preventivo",
+        title: "Gestionale su Misura",
+        tag: "Su preventivo · da €799",
         description:
-          "Un software pensato per il tuo flusso di lavoro. Gestisci clienti, ordini, magazzino — senza fogli Excel.",
-        highlights: ["Accessibile da qualsiasi dispositivo", "Dati al sicuro", "Scalabile nel tempo"],
+          "Basta fogli Excel. Clienti, ordini, magazzino — tutto in un software pensato per il tuo modo di lavorare.",
+        highlights: ["Accessibile da qualsiasi dispositivo", "Dati al sicuro nel cloud", "Scalabile nel tempo"],
+        cta: "Richiedi un preventivo →",
       },
       {
         number: "03",
         title: "Automazioni",
-        tag: "Risparmia ore ogni settimana",
+        tag: "Risparmia 5+ ore a settimana",
         description:
-          "Fatture automatiche, email di follow-up, report. Automatizza le attività che ti rubano tempo ogni giorno.",
-        highlights: ["Integrazione con i tuoi strumenti", "Flussi personalizzati", "Supporto continuo"],
+          "Fatture automatiche, follow-up email, report. Smetti di fare manualmente quello che può fare un computer.",
+        highlights: ["Si integra con i tuoi strumenti", "Flussi completamente personalizzati", "Supporto continuo"],
+        cta: "Automatizza il mio lavoro →",
       },
     ],
   },
   why: {
     heading: "Perché scegliere Facilito",
-    subheading: "Siamo un piccolo team con un obiettivo chiaro: farti ottenere risultati, senza complicarti la vita.",
+    subheading: "Un team piccolo, obiettivi chiari: risultati concreti in tempi brevi, senza stress.",
     items: [
       {
-        title: "Veloci",
-        description: "Dal preventivo alla consegna in tempi record. Nessuna attesa di mesi.",
+        title: "Veloci davvero",
+        description: "Dalla prima chiamata al sito online: meno di 7 giorni. Non mesi.",
       },
       {
-        title: "Chiari",
-        description: "Prezzi fissi, comunicazione diretta. Sai sempre cosa stai pagando.",
+        title: "Prezzi fissi",
+        description: "€499 per il sito base. Tutto incluso. Zero costi nascosti.",
       },
       {
-        title: "Su misura",
-        description: "Nessun template copia-incolla. Ogni progetto nasce dalle tue esigenze reali.",
+        title: "Fatto solo per te",
+        description: "Nessun template preconfezionato. Ogni progetto nasce dalle tue esigenze reali.",
       },
       {
-        title: "Vicini",
-        description: "Non spariscono dopo la consegna. Siamo disponibili quando hai bisogno.",
+        title: "Sempre presenti",
+        description: "Non spariscono dopo la consegna. Un contatto diretto, sempre.",
       },
     ],
   },
   process: {
     heading: "Come funziona",
-    subheading: "Tre passi per passare dall'idea al prodotto finito.",
+    subheading: "Dall'idea al lancio in 3 passi. Più semplice di quanto pensi.",
     steps: [
       {
         number: "01",
-        title: "Ci racconti cosa ti serve",
+        title: "Ci racconti il progetto",
+        duration: "~15 min",
         description:
-          "Una chiamata di 15 minuti o un messaggio. Nessun impegno. Capiamo insieme il progetto e ti mandiamo un preventivo gratuito.",
+          "Una chiamata veloce o un messaggio. Nessun impegno. Ti mandiamo un preventivo gratuito entro 24 ore.",
       },
       {
         number: "02",
-        title: "Costruiamo insieme",
+        title: "Noi costruiamo tutto",
+        duration: "5–7 giorni",
         description:
-          "Progettiamo e sviluppiamo mantenendoti aggiornato a ogni fase. Nessun tecnicismo, solo progressi concreti.",
+          "Design, sviluppo, contenuti. Restiamo in contatto a ogni passo — senza tecnicismi, solo risultati.",
       },
       {
         number: "03",
-        title: "Vai online",
+        title: "Sei online",
+        duration: "30 min setup",
         description:
-          "Consegniamo, ti formiamo se serve e restiamo a disposizione. Il tuo progetto è pronto a lavorare per te.",
+          "Pubblichiamo insieme. Ti mostriamo come gestire il sito in 30 minuti e restiamo disponibili.",
       },
     ],
   },
   testimonials: {
-    heading: "Chi ha già lavorato con noi",
-    subheading: "Non parole nostre. Parole loro.",
+    heading: "Dicono di noi",
+    subheading: "Clienti reali. Risultati reali.",
+    cta: "Unisciti a loro — preventivo gratis",
     items: [
       {
         name: "Marco R.",
@@ -128,12 +135,13 @@ export const it = {
     ],
   },
   contact: {
-    heading: "Parliamoci.",
+    heading: "Il preventivo è gratis.",
     subheading:
-      "Raccontaci il tuo progetto. Ricevi un preventivo gratuito entro 24 ore. Nessun impegno, nessuna pressione.",
+      "Mandaci un messaggio — ti risponderemo entro 24 ore con un'offerta su misura. Nessuno spam, nessuna pressione.",
+    urgency: "Stiamo accettando nuovi progetti · slot limitati",
     guarantee: "Preventivo gratuito entro 24h",
-    noSpam: "Zero spam, zero pressioni di vendita",
-    fastResponse: "Risposta rapida e diretta",
+    noSpam: "Nessuno spam, mai",
+    fastResponse: "Risposta in giornata",
     bookCall: "Preferisci parlare direttamente?",
     bookCallCta: "Prenota una chiamata",
     form: {
@@ -150,11 +158,11 @@ export const it = {
       ],
       message: "Raccontaci il progetto",
       messagePlaceholder: "Descrivi brevemente cosa stai cercando...",
-      submit: "Invia la richiesta",
+      submit: "Mandami un preventivo gratis",
       submitting: "Invio in corso...",
-      successTitle: "Richiesta inviata!",
+      successTitle: "Messaggio ricevuto!",
       successMessage:
-        "Ti risponderemo entro 24 ore. Controlla anche la cartella spam se non ricevi notizie.",
+        "Ti risponderemo entro 24 ore. Se non ricevi notizie, controlla la cartella spam.",
       errorMessage: "Qualcosa è andato storto. Riprova o scrivici direttamente.",
       sendAnother: "Invia un'altra richiesta",
       errors: {
