@@ -2,27 +2,28 @@ import type { Translations } from "./it";
 
 export const en: Translations = {
   meta: {
-    title: "Facilito Agency — Websites, Management Systems & Automation",
+    title: "Facilito Agency — Websites, Management Systems, Automation & Marketing",
     description:
-      "We build websites, custom management systems, and automations for freelancers and small businesses. Free quote in 24h.",
+      "Websites, custom management systems, automation, and marketing to grow your business: more clients, lower costs. Free quote in 24h.",
   },
   nav: {
     services: "Services",
+    why: "Why us",
     process: "How it works",
     contact: "Contact",
     cta: "Free quote",
   },
   hero: {
-    badge: "Only 3 slots available this month — response in 24h",
-    line1: "Your website,",
-    line2: "live in 7 days.",
-    line3: "Built for you.",
+    badge: "Digital solutions for small businesses",
+    line1: "More clients.",
+    line2: "Lower costs.",
+    line3: "Zero hassle.",
     description:
-      "Done for you, no technical knowledge required. Websites, management systems, and automations for freelancers and small businesses.",
+      "Websites, management systems, automations and marketing built to grow your business — no tech jargon, no price surprises.",
     cta: "Get your free quote",
-    secondary: "How it works ↓",
+    secondary: "How it works",
     bookCall: "Or book a free call",
-    trust: ["Free quote in 24h", "Fixed price, no surprises", "Live in 7 days"],
+    trust: ["Free quote in 24h", "Fixed price, no surprises", "Results in days, not months"],
     stats: [
       { value: "50+", label: "Happy clients" },
       { value: "7d", label: "Average delivery" },
@@ -30,16 +31,16 @@ export const en: Translations = {
     ],
   },
   services: {
-    heading: "What you get with us",
-    subheading: "Concrete solutions. Fixed prices. Results in days.",
+    heading: "Everything you need to grow",
+    subheading: "Website, management system, automation and marketing. Fixed prices, measurable results.",
     items: [
       {
         number: "01",
         title: "Professional Website",
         tag: "Live in 7 days",
         description:
-          "A site that works for you: attracts clients, communicates who you are, works on every device. Delivered in a week.",
-        highlights: ["Custom design, never a template", "SEO optimized for Google", "CMS: update it yourself"],
+          "Your best salesperson, always on. A site that brings in new clients, tells your story, and works flawlessly on every screen — ready in a week.",
+        highlights: ["Custom design, never a template", "SEO optimized for Google", "Update it yourself, no developer needed"],
         cta: "I want my website →",
       },
       {
@@ -47,8 +48,8 @@ export const en: Translations = {
         title: "Custom Management System",
         tag: "By quote",
         description:
-          "Goodbye spreadsheets. Clients, orders, inventory — all in one software built for your workflow.",
-        highlights: ["Access from any device", "Secure cloud data", "Scalable over time"],
+          "Stop chasing spreadsheets and sticky notes. Clients, orders, inventory: one system built around how you actually work.",
+        highlights: ["Access from any device", "Secure cloud data", "Grows right alongside your business"],
         cta: "Request a quote →",
       },
       {
@@ -56,23 +57,32 @@ export const en: Translations = {
         title: "Automation",
         tag: "Save 5+ hours every week",
         description:
-          "Automatic invoices, follow-up emails, reports. Stop doing manually what a computer can do for you.",
-        highlights: ["Integrates with your tools", "Fully custom workflows", "Ongoing support"],
+          "Invoices, reminders, reports: all automatic. The time you lose on repetitive tasks comes back to you — use it to grow the business.",
+        highlights: ["Integrates with your tools", "Workflows built around your work", "Ongoing support, always included"],
         cta: "Automate my work →",
+      },
+      {
+        number: "04",
+        title: "Marketing & Brand Identity",
+        tag: "Fresh content, every week",
+        description:
+          "A brand people recognize instantly and social channels that stay active without you lifting a finger: logo, visual identity, and content that speaks to the right customers.",
+        highlights: ["Logo and coordinated visual identity", "Full social media management", "Content built to bring in clients"],
+        cta: "Grow my brand →",
       },
     ],
   },
   why: {
     heading: "Why choose Facilito",
-    subheading: "A small team, clear goals: real results in days, not months.",
+    subheading: "A small team, clear goals: more revenue, lower costs, zero stress.",
     items: [
       {
         title: "Actually fast",
-        description: "From first call to live website: under 7 days. Not months.",
+        description: "From first call to live project: days, not months.",
       },
       {
         title: "Transparent pricing",
-        description: "Free, detailed quote before we start. You always know what you'll pay — no surprises.",
+        description: "Free, detailed quote before we start. You always know what you'll pay.",
       },
       {
         title: "Built for you",
@@ -80,7 +90,7 @@ export const en: Translations = {
       },
       {
         title: "Always there",
-        description: "We don't disappear after delivery. Direct support, always.",
+        description: "We don't disappear after delivery. Direct contact, always available.",
       },
     ],
   },
@@ -92,22 +102,19 @@ export const en: Translations = {
         number: "01",
         title: "Tell us your project",
         duration: "~15 min",
-        description:
-          "A quick call or a message. No commitment. We send a free quote within 24 hours.",
+        description: "A quick call or a message, no strings attached. Free quote within 24 hours.",
       },
       {
         number: "02",
         title: "We build everything",
         duration: "5–7 days",
-        description:
-          "Design, development, content. We stay in touch at every step — no jargon, just results.",
+        description: "Design, development, content — we stay in touch every step. No jargon, just results.",
       },
       {
         number: "03",
         title: "You go live",
         duration: "30 min setup",
-        description:
-          "We publish together. We walk you through managing it in 30 minutes and stay available.",
+        description: "We publish together and show you how to manage everything in 30 minutes. We stay available after too.",
       },
     ],
   },
@@ -139,7 +146,7 @@ export const en: Translations = {
   contact: {
     heading: "The quote is free.",
     subheading:
-      "Send us a message — we'll get back within 24 hours with a tailored offer. No spam, no pressure.",
+      "Send us a message — we'll reply within 24 hours with a tailored offer built to help you grow: more clients, lower costs. No spam, no pressure.",
     urgency: "Now accepting new projects · limited slots",
     guarantee: "Free quote within 24h",
     noSpam: "Zero spam, ever",
@@ -158,6 +165,7 @@ export const en: Translations = {
         { value: "website", label: "Website" },
         { value: "cms", label: "Custom management system" },
         { value: "automation", label: "Automation" },
+        { value: "marketing", label: "Marketing & Social" },
         { value: "other", label: "Other / Not sure yet" },
       ],
       message: "Tell us about the project",
@@ -182,12 +190,15 @@ export const en: Translations = {
     badgeLive: "Site live in 7d",
     badgeAuto: "Automation active",
     badgeDash: "Dashboard online",
+    badgeSocial: "Social active",
     successLive: "Site live!",
     successAuto: "Running...",
     successDash: "Data updated",
+    successSocial: "Post published!",
     urlWebsite: "yoursite.com",
     urlAutomation: "n8n.yourbusiness.com/workflow",
     urlDashboard: "dashboard.yourbusiness.com",
+    urlSocial: "instagram.com/yourbrand",
     autoTitle: "Lead automation",
     autoNode1: "New Lead",
     autoNode2: "Email Sent",
@@ -207,6 +218,14 @@ export const en: Translations = {
     dashStatusActive: "Active",
     dashStatusProgress: "In progress",
     dashStatusNew: "New",
+    socialTitle: "Content Calendar",
+    socialRow1: "Product post",
+    socialRow2: "Behind-the-scenes reel",
+    socialRow3: "Promo story",
+    socialStatusPublished: "Published",
+    socialStatusScheduled: "Scheduled",
+    socialStatusDraft: "Draft",
+    socialFooter: "Engagement +32% this month",
   },
   footer: {
     tagline: "The digital you actually need.",
@@ -215,6 +234,7 @@ export const en: Translations = {
     rights: "All rights reserved.",
     email: "info@facilitoagency.com",
     tiktok: "Follow us on TikTok",
+    instagram: "Follow us on Instagram",
     links: {
       privacy: "Privacy",
       terms: "Terms",

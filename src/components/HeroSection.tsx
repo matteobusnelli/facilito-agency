@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Calendar } from "lucide-react";
+import { motion, useMotionValue } from "framer-motion";
+import { type MouseEvent } from "react";
+import { Zap, Lock, Rocket } from "lucide-react";
 import { useTranslation } from "@/i18n";
-import HeroBrowserMockup from "@/components/HeroBrowserMockup";
+import HeroBackground from "@/components/HeroBackground";
+import HeroRing from "@/components/HeroRing";
 
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
 
@@ -11,77 +13,69 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
+const TRUST_STYLES = [
+  { Icon: Zap, color: "hsl(25 95% 58%)", tint: "hsl(25 95% 45% / 0.15)" },
+  { Icon: Lock, color: "hsl(258 90% 68%)", tint: "hsl(258 90% 45% / 0.15)" },
+  { Icon: Rocket, color: "hsl(271 81% 68%)", tint: "hsl(271 81% 45% / 0.15)" },
+] as const;
+
 const HeroSection = () => {
   const { t } = useTranslation();
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-hero bg-dot-grid overflow-hidden">
-      {/* Ambient glows */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-0 w-[700px] h-[700px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(252 91% 63% / 0.15) 0%, transparent 65%)" }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 -left-32 w-[500px] h-[500px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(220 90% 58% / 0.08) 0%, transparent 70%)" }}
-      />
-      {/* Accent glow under CTA area */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/4 w-[600px] h-[300px] -translate-y-1/2 rounded-full"
-        style={{ background: "radial-gradient(ellipse, hsl(252 91% 63% / 0.06) 0%, transparent 70%)" }}
-      />
+    <section
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-screen flex flex-col justify-center bg-hero overflow-hidden"
+    >
+      <HeroBackground mouseX={mouseX} mouseY={mouseY} />
 
-      <div className="container mx-auto px-6 relative z-10 pt-24 pb-20 md:pt-32 md:pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-10 items-center">
+      <div className="container mx-auto px-6 relative z-10 pt-28 pb-20 md:pt-32 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-6 items-center">
 
           {/* LEFT — text content */}
           <div>
-            {/* Urgency badge — amber to signal scarcity */}
-            <motion.div {...fadeUp(0)} className="mb-8">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/25 bg-amber-500/[0.08] text-amber-300/90 text-sm font-medium">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
-                </span>
-                {t.hero.badge}
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.05] tracking-tight text-white mb-6"
+              className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-extrabold leading-[1.05] tracking-tight text-white mb-6"
             >
-              {t.hero.line1}{" "}
-              <span className="block sm:inline">{t.hero.line2}{" "}</span>
-              <span className="text-gradient">{t.hero.line3}</span>
+              <span className="block">{t.hero.line1}</span>
+              <span className="block">{t.hero.line2}</span>
+              <span className="block text-gradient-warm animate-gradient-shimmer">{t.hero.line3}</span>
             </motion.h1>
 
             {/* Description */}
             <motion.p
               {...fadeUp(0.2)}
-              className="text-lg sm:text-xl text-white/55 leading-relaxed mb-10 max-w-xl"
+              className="text-lg sm:text-xl text-white/60 leading-relaxed mb-10 max-w-xl"
             >
               {t.hero.description}
             </motion.p>
 
             {/* CTAs */}
-            <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-6">
+            <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href="#contatti"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-all"
-                style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.45)" }}
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-warm text-white font-semibold text-base hover:opacity-90 transition-opacity"
               >
-                <span className="absolute inset-0 rounded-xl animate-cta-ring" aria-hidden />
                 {t.hero.cta}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#come-funziona"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white/40 font-medium text-base hover:text-white/70 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/5 hover:border-white/30 transition-colors"
               >
                 {t.hero.secondary}
               </a>
@@ -89,59 +83,61 @@ const HeroSection = () => {
 
             {/* Calendly link */}
             {CALENDLY_URL && (
-              <motion.div {...fadeUp(0.35)} className="mb-10">
+              <motion.div {...fadeUp(0.35)} className="mb-8">
                 <a
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+                  className="text-sm text-white/40 hover:text-white/70 transition-colors"
                 >
-                  <Calendar className="w-3.5 h-3.5" />
                   {t.hero.bookCall}
                 </a>
               </motion.div>
             )}
 
             {/* Trust badges */}
-            <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-x-8 gap-y-3 mb-16">
-              {t.hero.trust.map((item) => (
-                <span key={item} className="flex items-center gap-2 text-sm text-white/45">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />
-                  {item}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
-              className="pt-8 border-t border-white/[0.08] grid grid-cols-3 gap-8 max-w-sm"
-            >
-              {t.hero.stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="number-hero text-3xl text-white mb-1">{stat.value}</p>
-                  <p className="text-xs text-white/40 leading-snug">{stat.label}</p>
-                </div>
-              ))}
+            <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-x-8 gap-y-5">
+              {t.hero.trust.map((item, i) => {
+                const { Icon, color, tint } = TRUST_STYLES[i];
+                return (
+                  <div key={item} className="flex items-center gap-3 max-w-[170px]">
+                    <span
+                      className="flex items-center justify-center w-11 h-11 rounded-full shrink-0"
+                      style={{ background: tint }}
+                    >
+                      <Icon className="w-[18px] h-[18px]" style={{ color }} />
+                    </span>
+                    <span className="text-sm text-white/70 leading-snug">{item}</span>
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 
-          {/* RIGHT — browser mockup visual */}
-          <div className="flex items-center justify-center lg:justify-end">
-            <HeroBrowserMockup />
-          </div>
+          {/* RIGHT — brand graphic: the mark stays still, only the ring of light around it flows */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex items-center justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[600px]" style={{ aspectRatio: "897 / 786" }}>
+              <HeroRing />
+              <img
+                src="/hero-graphic.webp"
+                alt=""
+                aria-hidden
+                className="absolute inset-0 w-full h-full select-none"
+                style={{
+                  maskImage: "radial-gradient(closest-side, black 55%, transparent 100%)",
+                  WebkitMaskImage: "radial-gradient(closest-side, black 55%, transparent 100%)",
+                }}
+              />
+            </div>
+          </motion.div>
 
         </div>
       </div>
-
-      {/* Fade to background */}
-      <div
-        aria-hidden
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--background)))" }}
-      />
     </section>
   );
 };

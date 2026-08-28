@@ -1,26 +1,27 @@
 export const it = {
   meta: {
-    title: "Facilito Agency — Siti Web, Gestionali e Automazioni",
+    title: "Facilito Agency — Siti Web, Gestionali, Automazioni e Marketing",
     description:
-      "Realizziamo siti web, gestionali su misura e automazioni per professionisti e piccole attività. Preventivo gratuito in 24h.",
+      "Siti web, gestionali su misura, automazioni e marketing per far crescere la tua attività: più clienti, meno costi. Preventivo gratuito in 24h.",
   },
   nav: {
     services: "Servizi",
+    why: "Perché noi",
     process: "Come funziona",
     contact: "Contatti",
     cta: "Preventivo gratuito",
   },
   hero: {
-    badge: "Solo 3 slot disponibili questo mese — risposta in 24h",
-    line1: "Il tuo sito web",
-    line2: "pronto in 7 giorni.",
-    line3: "Fatto per te.",
+    badge: "Digital solutions per piccole attività",
+    line1: "Più clienti.",
+    line2: "Meno costi.",
+    line3: "Zero pensieri.",
     description:
-      "Fatto completamente per te, senza tecnicismi. Siti web, gestionali e automazioni per freelance e piccole attività.",
+      "Siti web, gestionali, automazioni e marketing fatti per far crescere la tua attività — senza tecnicismi e senza sorprese sul prezzo.",
     cta: "Ottieni il preventivo gratis",
-    secondary: "Come funziona ↓",
+    secondary: "Come funziona",
     bookCall: "Oppure prenota una chiamata gratuita",
-    trust: ["Preventivo gratuito in 24h", "Prezzo fisso, nessuna sorpresa", "Online in 7 giorni"],
+    trust: ["Preventivo gratuito in 24h", "Prezzo fisso, nessuna sorpresa", "Risultati in pochi giorni, non mesi"],
     stats: [
       { value: "50+", label: "Clienti soddisfatti" },
       { value: "7 gg", label: "Consegna media" },
@@ -28,16 +29,16 @@ export const it = {
     ],
   },
   services: {
-    heading: "Cosa ottieni con noi",
-    subheading: "Soluzioni concrete. Prezzi fissi. Risultati in pochi giorni.",
+    heading: "Tutto quello che ti serve per crescere",
+    subheading: "Sito, gestionale, automazioni e marketing. Prezzi fissi, risultati misurabili.",
     items: [
       {
         number: "01",
         title: "Sito Web Professionale",
         tag: "Online in 7 giorni",
         description:
-          "Un sito che lavora per te: porta clienti, comunica chi sei, funziona su ogni dispositivo. Consegnato in una settimana.",
-        highlights: ["Design su misura, mai template", "Ottimizzato per Google (SEO)", "CMS: aggiornalo da solo"],
+          "Il tuo miglior venditore, sempre acceso. Un sito che porta clienti nuovi, racconta chi sei e funziona alla perfezione su ogni schermo — pronto in una settimana.",
+        highlights: ["Design su misura, mai template", "Ottimizzato per Google (SEO)", "Lo aggiorni tu, in autonomia"],
         cta: "Voglio il mio sito →",
       },
       {
@@ -45,8 +46,8 @@ export const it = {
         title: "Gestionale su Misura",
         tag: "Su preventivo",
         description:
-          "Basta fogli Excel. Clienti, ordini, magazzino — tutto in un software pensato per il tuo modo di lavorare.",
-        highlights: ["Accessibile da qualsiasi dispositivo", "Dati al sicuro nel cloud", "Scalabile nel tempo"],
+          "Basta rincorrere fogli Excel e post-it. Clienti, ordini, magazzino: un unico gestionale costruito attorno a come lavori davvero tu.",
+        highlights: ["Accessibile da qualsiasi dispositivo", "Dati al sicuro nel cloud", "Cresce insieme alla tua attività"],
         cta: "Richiedi un preventivo →",
       },
       {
@@ -54,31 +55,40 @@ export const it = {
         title: "Automazioni",
         tag: "Risparmia 5+ ore a settimana",
         description:
-          "Fatture automatiche, follow-up email, report. Smetti di fare manualmente quello che può fare un computer.",
-        highlights: ["Si integra con i tuoi strumenti", "Flussi completamente personalizzati", "Supporto continuo"],
+          "Fatture, promemoria, report: tutto automatico. Il tempo che perdi in attività ripetitive torna a essere tuo — e lo usi per far crescere il business.",
+        highlights: ["Si integra con i tuoi strumenti", "Flussi su misura per il tuo lavoro", "Supporto continuo, sempre incluso"],
         cta: "Automatizza il mio lavoro →",
+      },
+      {
+        number: "04",
+        title: "Marketing & Brand Identity",
+        tag: "Contenuti pronti, ogni settimana",
+        description:
+          "Un brand che si riconosce a colpo d'occhio e social sempre aggiornati, senza che tu debba pensarci: logo, identità visiva e contenuti che parlano ai tuoi clienti giusti.",
+        highlights: ["Logo e identità visiva coordinata", "Gestione completa dei social", "Contenuti pensati per portare clienti"],
+        cta: "Fai crescere il mio brand →",
       },
     ],
   },
   why: {
     heading: "Perché scegliere Facilito",
-    subheading: "Un team piccolo, obiettivi chiari: risultati concreti in tempi brevi, senza stress.",
+    subheading: "Un team piccolo, obiettivi chiari: più fatturato, meno costi, zero stress.",
     items: [
       {
         title: "Veloci davvero",
-        description: "Dalla prima chiamata al sito online: meno di 7 giorni. Non mesi.",
+        description: "Dalla prima chiamata al progetto online: giorni, non mesi.",
       },
       {
         title: "Prezzi trasparenti",
-        description: "Preventivo gratuito e dettagliato prima di iniziare. Sai sempre quanto spendi, senza sorprese.",
+        description: "Preventivo gratuito e dettagliato prima di iniziare. Sai sempre quanto spendi.",
       },
       {
         title: "Fatto solo per te",
-        description: "Nessun template preconfezionato. Ogni progetto nasce dalle tue esigenze reali.",
+        description: "Zero template preconfezionati. Ogni progetto parte dalle tue esigenze reali.",
       },
       {
         title: "Sempre presenti",
-        description: "Non spariscono dopo la consegna. Un contatto diretto, sempre.",
+        description: "Non spariamo dopo la consegna. Un contatto diretto, sempre disponibile.",
       },
     ],
   },
@@ -90,22 +100,19 @@ export const it = {
         number: "01",
         title: "Ci racconti il progetto",
         duration: "~15 min",
-        description:
-          "Una chiamata veloce o un messaggio. Nessun impegno. Ti mandiamo un preventivo gratuito entro 24 ore.",
+        description: "Una chiamata veloce o un messaggio, senza impegno. Preventivo gratuito entro 24 ore.",
       },
       {
         number: "02",
         title: "Noi costruiamo tutto",
         duration: "5–7 giorni",
-        description:
-          "Design, sviluppo, contenuti. Restiamo in contatto a ogni passo — senza tecnicismi, solo risultati.",
+        description: "Design, sviluppo, contenuti — restiamo in contatto a ogni passo. Niente tecnicismi, solo risultati.",
       },
       {
         number: "03",
         title: "Sei online",
         duration: "30 min setup",
-        description:
-          "Pubblichiamo insieme. Ti mostriamo come gestire il sito in 30 minuti e restiamo disponibili.",
+        description: "Pubblichiamo insieme e ti mostriamo come gestire tutto in 30 minuti. Restiamo disponibili anche dopo.",
       },
     ],
   },
@@ -137,7 +144,7 @@ export const it = {
   contact: {
     heading: "Il preventivo è gratis.",
     subheading:
-      "Mandaci un messaggio — ti risponderemo entro 24 ore con un'offerta su misura. Nessuno spam, nessuna pressione.",
+      "Mandaci un messaggio — ti rispondiamo entro 24 ore con un'offerta su misura pensata per farti crescere: più clienti, meno costi. Nessuno spam, nessuna pressione.",
     urgency: "Stiamo accettando nuovi progetti · slot limitati",
     guarantee: "Preventivo gratuito entro 24h",
     noSpam: "Nessuno spam, mai",
@@ -156,6 +163,7 @@ export const it = {
         { value: "website", label: "Sito web" },
         { value: "cms", label: "Gestionale su misura" },
         { value: "automation", label: "Automazione" },
+        { value: "marketing", label: "Marketing & Social" },
         { value: "other", label: "Altro / Non so ancora" },
       ],
       message: "Raccontaci il progetto",
@@ -180,12 +188,15 @@ export const it = {
     badgeLive: "Sito live in 7gg",
     badgeAuto: "Automazione attiva",
     badgeDash: "Gestionale online",
+    badgeSocial: "Social attivi",
     successLive: "Sito online!",
     successAuto: "In esecuzione...",
     successDash: "Dati aggiornati",
+    successSocial: "Post pubblicato!",
     urlWebsite: "tuosito.it",
     urlAutomation: "n8n.tuabusiness.it/workflow",
     urlDashboard: "gestionale.tuabusiness.it",
+    urlSocial: "instagram.com/tuobrand",
     autoTitle: "Automazione lead",
     autoNode1: "Nuovo Lead",
     autoNode2: "Email Inviata",
@@ -205,6 +216,14 @@ export const it = {
     dashStatusActive: "Attivo",
     dashStatusProgress: "In corso",
     dashStatusNew: "Nuovo",
+    socialTitle: "Piano Contenuti",
+    socialRow1: "Post prodotto",
+    socialRow2: "Reel dietro le quinte",
+    socialRow3: "Storia promozione",
+    socialStatusPublished: "Pubblicato",
+    socialStatusScheduled: "Programmato",
+    socialStatusDraft: "Bozza",
+    socialFooter: "Engagement +32% questo mese",
   },
   footer: {
     tagline: "Il digitale che ti serve davvero.",
@@ -213,6 +232,7 @@ export const it = {
     rights: "Tutti i diritti riservati.",
     email: "info@facilitoagency.com",
     tiktok: "Seguici su TikTok",
+    instagram: "Seguici su Instagram",
     links: {
       privacy: "Privacy",
       terms: "Termini",

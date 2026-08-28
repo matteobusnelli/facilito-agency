@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircle2, ArrowRight, BadgeCheck, Zap, ShieldCheck, Calendar, AlertCircle } from "lucide-react";
+import { CheckCircle2, BadgeCheck, Zap, ShieldCheck, Calendar, AlertCircle } from "lucide-react";
 import { useTranslation } from "@/i18n";
 
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
@@ -72,9 +72,9 @@ const ContactSection = () => {
   };
 
   const guarantees = [
-    { icon: BadgeCheck, label: t.contact.guarantee },
-    { icon: ShieldCheck, label: t.contact.noSpam },
-    { icon: Zap, label: t.contact.fastResponse },
+    { icon: BadgeCheck, label: t.contact.guarantee, color: "hsl(252 91% 65%)", tint: "hsl(252 91% 60% / 0.1)" },
+    { icon: ShieldCheck, label: t.contact.noSpam, color: "hsl(271 81% 65%)", tint: "hsl(271 81% 60% / 0.1)" },
+    { icon: Zap, label: t.contact.fastResponse, color: "hsl(25 95% 55%)", tint: "hsl(25 95% 50% / 0.1)" },
   ];
 
   const inputCls =
@@ -114,10 +114,10 @@ const ContactSection = () => {
 
             {/* Guarantees */}
             <ul className="space-y-3">
-              {guarantees.map(({ icon: Icon, label }) => (
+              {guarantees.map(({ icon: Icon, label, color, tint }) => (
                 <li key={label} className="flex items-center gap-3 text-sm text-foreground">
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-4 h-4 text-primary" />
+                  <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: tint }}>
+                    <Icon className="w-4 h-4" style={{ color }} />
                   </span>
                   {label}
                 </li>
@@ -136,7 +136,6 @@ const ContactSection = () => {
                 >
                   <Calendar className="w-4 h-4" />
                   {t.contact.bookCallCta}
-                  <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             )}
@@ -315,8 +314,8 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 rounded-xl bg-primary text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:bg-primary/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-                    style={{ boxShadow: "0 8px 24px -4px hsl(252 91% 63% / 0.35)" }}
+                    className="w-full h-12 rounded-full bg-gradient-warm text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
+                    style={{ boxShadow: "0 8px 24px -4px hsl(25 95% 55% / 0.35)" }}
                   >
                     {isSubmitting ? (
                       <>
@@ -324,10 +323,7 @@ const ContactSection = () => {
                         {f.submitting}
                       </>
                     ) : (
-                      <>
-                        {f.submit}
-                        <ArrowRight className="w-4 h-4" />
-                      </>
+                      f.submit
                     )}
                   </button>
 

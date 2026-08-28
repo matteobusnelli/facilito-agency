@@ -7,8 +7,20 @@ const TestimonialsSection = () => {
   const { heading, subheading, items } = t.testimonials;
 
   return (
-    <section className="py-28 md:py-36 bg-hero bg-dot-grid overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="relative py-28 md:py-36 bg-hero bg-dot-grid overflow-hidden">
+      {/* Ambient glow, echoes the hero's lit environment */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 right-[-10%] w-[600px] h-[600px] rounded-full mix-blend-screen animate-aurora-a"
+        style={{ background: "radial-gradient(circle, hsl(25 95% 55% / 0.1) 0%, hsl(280 80% 55% / 0.06) 45%, transparent 72%)", filter: "blur(80px)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full mix-blend-screen animate-aurora-b"
+        style={{ background: "radial-gradient(circle, hsl(254 91% 60% / 0.12) 0%, transparent 70%)", filter: "blur(80px)" }}
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +63,7 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 rounded-2xl bg-white/[0.05] border border-white/[0.08] backdrop-blur-sm"
+              className="p-8 rounded-2xl bg-white/[0.05] border border-white/[0.08] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:border-white/[0.14]"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-5">
@@ -84,8 +96,8 @@ const TestimonialsSection = () => {
         >
           <a
             href="#contatti"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
-            style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.4)" }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-warm text-white font-semibold text-base hover:opacity-90 transition-opacity"
+            style={{ boxShadow: "0 8px 32px -4px hsl(25 95% 55% / 0.35)" }}
           >
             {t.testimonials.cta}
           </a>

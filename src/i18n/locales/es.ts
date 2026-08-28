@@ -2,27 +2,28 @@ import type { Translations } from "./it";
 
 export const es: Translations = {
   meta: {
-    title: "Facilito Agency — Sitios Web, Gestores y Automatizaciones",
+    title: "Facilito Agency — Sitios Web, Gestores, Automatizaciones y Marketing",
     description:
-      "Creamos sitios web, gestores a medida y automatizaciones para freelancers y pequeños negocios. Presupuesto gratuito en 24h.",
+      "Sitios web, gestores a medida, automatizaciones y marketing para hacer crecer tu negocio: más clientes, menos costes. Presupuesto gratis en 24h.",
   },
   nav: {
     services: "Servicios",
+    why: "Por qué nosotros",
     process: "Cómo funciona",
     contact: "Contacto",
     cta: "Presupuesto gratis",
   },
   hero: {
-    badge: "Solo 3 plazas disponibles este mes — respuesta en 24h",
-    line1: "Tu sitio web",
-    line2: "listo en 7 días.",
-    line3: "Hecho para ti.",
+    badge: "Soluciones digitales para pequeños negocios",
+    line1: "Más clientes.",
+    line2: "Menos costes.",
+    line3: "Cero complicaciones.",
     description:
-      "Hecho para ti, sin tecnicismos. Sitios web, gestores y automatizaciones para freelancers y pequeños negocios.",
+      "Sitios web, gestores, automatizaciones y marketing pensados para hacer crecer tu negocio — sin tecnicismos y sin sorpresas en el precio.",
     cta: "Obtén el presupuesto gratis",
-    secondary: "Cómo funciona ↓",
+    secondary: "Cómo funciona",
     bookCall: "O reserva una llamada gratuita",
-    trust: ["Presupuesto gratuito en 24h", "Precio fijo, sin sorpresas", "Online en 7 días"],
+    trust: ["Presupuesto gratuito en 24h", "Precio fijo, sin sorpresas", "Resultados en días, no meses"],
     stats: [
       { value: "50+", label: "Clientes satisfechos" },
       { value: "7d", label: "Entrega media" },
@@ -30,16 +31,16 @@ export const es: Translations = {
     ],
   },
   services: {
-    heading: "Lo que obtienes con nosotros",
-    subheading: "Soluciones concretas. Precios fijos. Resultados en pocos días.",
+    heading: "Todo lo que necesitas para crecer",
+    subheading: "Sitio web, gestor, automatizaciones y marketing. Precios fijos, resultados medibles.",
     items: [
       {
         number: "01",
         title: "Sitio Web Profesional",
         tag: "Online en 7 días",
         description:
-          "Un sitio que trabaja por ti: atrae clientes, comunica quién eres, funciona en cualquier dispositivo. Entregado en una semana.",
-        highlights: ["Diseño a medida, nunca plantilla", "Optimizado para Google (SEO)", "CMS: actualízalo tú solo"],
+          "Tu mejor vendedor, siempre encendido. Un sitio que atrae clientes nuevos, cuenta quién eres y funciona perfecto en cualquier pantalla — listo en una semana.",
+        highlights: ["Diseño a medida, nunca plantilla", "Optimizado para Google (SEO)", "Lo actualizas tú, sin necesitar un developer"],
         cta: "Quiero mi sitio web →",
       },
       {
@@ -47,8 +48,8 @@ export const es: Translations = {
         title: "Gestor a Medida",
         tag: "Por presupuesto",
         description:
-          "Adiós hojas de cálculo. Clientes, pedidos, inventario — todo en un software pensado para tu forma de trabajar.",
-        highlights: ["Acceso desde cualquier dispositivo", "Datos seguros en la nube", "Escalable en el tiempo"],
+          "Basta de perseguir hojas de cálculo y post-its. Clientes, pedidos, inventario: un único gestor construido según cómo trabajas de verdad.",
+        highlights: ["Acceso desde cualquier dispositivo", "Datos seguros en la nube", "Crece junto a tu negocio"],
         cta: "Pedir presupuesto →",
       },
       {
@@ -56,31 +57,40 @@ export const es: Translations = {
         title: "Automatizaciones",
         tag: "Ahorra 5+ horas a la semana",
         description:
-          "Facturas automáticas, emails de seguimiento, informes. Deja de hacer manualmente lo que puede hacer un ordenador.",
-        highlights: ["Se integra con tus herramientas", "Flujos completamente personalizados", "Soporte continuo"],
+          "Facturas, recordatorios, informes: todo automático. El tiempo que pierdes en tareas repetitivas vuelve a ser tuyo — úsalo para hacer crecer el negocio.",
+        highlights: ["Se integra con tus herramientas", "Flujos hechos a tu medida", "Soporte continuo, siempre incluido"],
         cta: "Automatiza mi trabajo →",
+      },
+      {
+        number: "04",
+        title: "Marketing & Identidad de Marca",
+        tag: "Contenido listo, cada semana",
+        description:
+          "Una marca que se reconoce a simple vista y redes sociales siempre activas sin que tengas que pensarlo: logo, identidad visual y contenido que habla a tus clientes ideales.",
+        highlights: ["Logo e identidad visual coordinada", "Gestión completa de redes sociales", "Contenido pensado para atraer clientes"],
+        cta: "Haz crecer mi marca →",
       },
     ],
   },
   why: {
     heading: "Por qué elegir Facilito",
-    subheading: "Un equipo pequeño, objetivos claros: resultados concretos en poco tiempo, sin estrés.",
+    subheading: "Un equipo pequeño, objetivos claros: más facturación, menos costes, cero estrés.",
     items: [
       {
         title: "Rápidos de verdad",
-        description: "De la primera llamada al sitio online: menos de 7 días. No meses.",
+        description: "De la primera llamada al proyecto online: días, no meses.",
       },
       {
         title: "Precios transparentes",
-        description: "Presupuesto gratuito y detallado antes de empezar. Siempre sabrás lo que pagas, sin sorpresas.",
+        description: "Presupuesto gratuito y detallado antes de empezar. Siempre sabrás lo que pagas.",
       },
       {
         title: "Hecho solo para ti",
-        description: "Sin plantillas prefabricadas. Cada proyecto nace de tus necesidades reales.",
+        description: "Cero plantillas prefabricadas. Cada proyecto nace de tus necesidades reales.",
       },
       {
         title: "Siempre presentes",
-        description: "No desaparecemos tras la entrega. Un contacto directo, siempre.",
+        description: "No desaparecemos tras la entrega. Contacto directo, siempre disponible.",
       },
     ],
   },
@@ -92,22 +102,19 @@ export const es: Translations = {
         number: "01",
         title: "Cuéntanos tu proyecto",
         duration: "~15 min",
-        description:
-          "Una llamada rápida o un mensaje. Sin compromiso. Te enviamos un presupuesto gratuito en 24 horas.",
+        description: "Una llamada rápida o un mensaje, sin compromiso. Presupuesto gratuito en 24 horas.",
       },
       {
         number: "02",
         title: "Nosotros construimos todo",
         duration: "5–7 días",
-        description:
-          "Diseño, desarrollo, contenidos. Estamos en contacto en cada paso — sin tecnicismos, solo resultados.",
+        description: "Diseño, desarrollo, contenidos — estamos en contacto en cada paso. Sin tecnicismos, solo resultados.",
       },
       {
         number: "03",
         title: "Estás online",
         duration: "30 min setup",
-        description:
-          "Publicamos juntos. Te mostramos cómo gestionar el sitio en 30 minutos y seguimos disponibles.",
+        description: "Publicamos juntos y te mostramos cómo gestionarlo todo en 30 minutos. Seguimos disponibles después.",
       },
     ],
   },
@@ -139,7 +146,7 @@ export const es: Translations = {
   contact: {
     heading: "El presupuesto es gratis.",
     subheading:
-      "Mándanos un mensaje — te responderemos en 24 horas con una oferta a medida. Sin spam, sin presión.",
+      "Mándanos un mensaje — te respondemos en 24 horas con una oferta a medida pensada para ayudarte a crecer: más clientes, menos costes. Sin spam, sin presión.",
     urgency: "Aceptando nuevos proyectos · plazas limitadas",
     guarantee: "Presupuesto gratuito en 24h",
     noSpam: "Cero spam, nunca",
@@ -158,6 +165,7 @@ export const es: Translations = {
         { value: "website", label: "Sitio web" },
         { value: "cms", label: "Gestor a medida" },
         { value: "automation", label: "Automatización" },
+        { value: "marketing", label: "Marketing & Redes Sociales" },
         { value: "other", label: "Otro / Todavía no lo sé" },
       ],
       message: "Cuéntanos el proyecto",
@@ -182,12 +190,15 @@ export const es: Translations = {
     badgeLive: "Sitio live en 7d",
     badgeAuto: "Automatización activa",
     badgeDash: "Gestor online",
+    badgeSocial: "Redes activas",
     successLive: "¡Sitio online!",
     successAuto: "En ejecución...",
     successDash: "Datos actualizados",
+    successSocial: "¡Post publicado!",
     urlWebsite: "tusitio.es",
     urlAutomation: "n8n.tunegocio.es/workflow",
     urlDashboard: "gestor.tunegocio.es",
+    urlSocial: "instagram.com/tumarca",
     autoTitle: "Automatización leads",
     autoNode1: "Nuevo Lead",
     autoNode2: "Email Enviado",
@@ -207,6 +218,14 @@ export const es: Translations = {
     dashStatusActive: "Activo",
     dashStatusProgress: "En curso",
     dashStatusNew: "Nuevo",
+    socialTitle: "Plan de Contenidos",
+    socialRow1: "Post de producto",
+    socialRow2: "Reel detrás de cámaras",
+    socialRow3: "Historia promoción",
+    socialStatusPublished: "Publicado",
+    socialStatusScheduled: "Programado",
+    socialStatusDraft: "Borrador",
+    socialFooter: "Engagement +32% este mes",
   },
   footer: {
     tagline: "Lo digital que realmente necesitas.",
@@ -215,6 +234,7 @@ export const es: Translations = {
     rights: "Todos los derechos reservados.",
     email: "info@facilitoagency.com",
     tiktok: "Síguenos en TikTok",
+    instagram: "Síguenos en Instagram",
     links: {
       privacy: "Privacidad",
       terms: "Términos",

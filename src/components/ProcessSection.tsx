@@ -34,10 +34,15 @@ const ProcessSection = () => {
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="relative grid sm:grid-cols-[80px_1fr] gap-6 pb-12 last:pb-0"
             >
-              {/* Connector line */}
+              {/* Connector line — grows downward as the step scrolls into view */}
               {i < steps.length - 1 && (
-                <div
+                <motion.div
                   aria-hidden
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.12 + 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ transformOrigin: "top" }}
                   className="absolute left-[39px] top-14 bottom-0 w-px bg-border hidden sm:block"
                 />
               )}
@@ -58,7 +63,10 @@ const ProcessSection = () => {
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h3 className="text-xl font-bold tracking-tight">{step.title}</h3>
                   {/* Duration pill — shows how fast each step is */}
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                  <span
+                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
+                    style={{ background: "hsl(25 95% 55% / 0.12)", color: "hsl(28 100% 55%)" }}
+                  >
                     {step.duration}
                   </span>
                 </div>
@@ -78,8 +86,8 @@ const ProcessSection = () => {
         >
           <a
             href="#contatti"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
-            style={{ boxShadow: "0 8px 32px -4px hsl(252 91% 63% / 0.3)" }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-warm text-white font-semibold text-base hover:opacity-90 transition-opacity"
+            style={{ boxShadow: "0 8px 32px -4px hsl(25 95% 55% / 0.3)" }}
           >
             {t.nav.cta}
           </a>

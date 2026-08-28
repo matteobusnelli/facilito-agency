@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useTranslation, type Locale, LOCALE_LABELS } from "@/i18n";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,7 @@ const Navbar = () => {
   const { t, locale, setLocale } = useTranslation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -19,6 +20,7 @@ const Navbar = () => {
 
   const links = [
     { label: t.nav.services, href: "#servizi" },
+    { label: t.nav.why, href: "#perche-noi" },
     { label: t.nav.process, href: "#come-funziona" },
     { label: t.nav.contact, href: "#contatti" },
   ];
@@ -35,7 +37,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" aria-label="Facilito Agency">
-          <img src="/logo.png" alt="Facilito Agency" className="h-9 w-auto" />
+          <img src="/logo.png" alt="Facilito Agency" className="h-[66px] w-auto" />
         </a>
 
         {/* Desktop nav */}
@@ -74,9 +76,10 @@ const Navbar = () => {
 
           <a
             href="#contatti"
-            className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+            className="group inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-warm text-white text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             {t.nav.cta}
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
@@ -90,6 +93,13 @@ const Navbar = () => {
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
+
+      {/* Scroll progress indicator */}
+      <motion.div
+        aria-hidden
+        className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+        style={{ scaleX: scrollYProgress, background: "var(--gradient-primary)" }}
+      />
 
       {/* Mobile menu */}
       <AnimatePresence>
@@ -132,9 +142,10 @@ const Navbar = () => {
               <a
                 href="#contatti"
                 onClick={() => setOpen(false)}
-                className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center mt-1"
+                className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-warm text-white text-sm font-semibold text-center mt-1"
               >
                 {t.nav.cta}
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </motion.div>

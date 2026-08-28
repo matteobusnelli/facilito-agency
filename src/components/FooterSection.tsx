@@ -7,12 +7,25 @@ const TikTokIcon = () => (
   </svg>
 );
 
+const InstagramIcon = () => (
+  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 const FooterSection = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-hero border-t border-white/[0.06]">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="relative bg-hero border-t border-white/[0.06] overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 left-[6%] w-[420px] h-[420px] rounded-full mix-blend-screen"
+        style={{ background: "radial-gradient(circle, hsl(254 91% 60% / 0.08) 0%, transparent 70%)", filter: "blur(80px)" }}
+      />
+      <div className="container mx-auto px-6 py-12 relative z-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* Brand */}
           <div>
@@ -28,6 +41,15 @@ const FooterSection = () => {
             >
               <Mail className="w-4 h-4" />
               <span>info@facilitoagency.com</span>
+            </a>
+            <a
+              href="https://www.instagram.com/facilito.agency/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid grid-cols-[1rem_1fr] items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
+            >
+              <InstagramIcon />
+              <span>{t.footer.instagram}</span>
             </a>
             <a
               href="https://www.tiktok.com/@facilito.agency"

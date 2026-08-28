@@ -49,8 +49,8 @@
     --surface: 240 5% 96%;
     --surface-foreground: 240 8% 6%;
 
-    /* Hero — very dark */
-    --hero: 240 10% 5%;
+    /* Hero — near-black, matches reference art background */
+    --hero: 250 45% 3%;
     --hero-foreground: 0 0% 98%;
 
     /* Sidebar (required by shadcn) */
@@ -66,6 +66,7 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(252 91% 63%), hsl(220 90% 58%));
     --gradient-hero: linear-gradient(160deg, hsl(240 10% 7%), hsl(250 15% 4%));
+    --gradient-warm: linear-gradient(90deg, hsl(25 95% 53%), hsl(320 80% 55%), hsl(254 91% 60%));
 
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(240 8% 6% / 0.08);
@@ -104,6 +105,18 @@
 
   .bg-gradient-primary {
     background: var(--gradient-primary);
+  }
+
+  .text-gradient-warm {
+    background: var(--gradient-warm);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
   }
 
   .bg-gradient-hero {
@@ -150,6 +163,70 @@
 
 .animate-cta-ring {
   animation: cta-ring 2.4s ease-in-out infinite;
+}
+
+/* Gradient headline shimmer */
+@keyframes gradient-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.animate-gradient-shimmer {
+  animation: gradient-shimmer 5s linear infinite;
+}
+
+/* Hero background — slow-drifting aurora blobs */
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -4%) scale(1.12); }
+}
+
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-4%, 3%) scale(1.08); }
+}
+
+.animate-aurora-a {
+  animation: aurora-drift-a 17s ease-in-out infinite;
+}
+
+.animate-aurora-b {
+  animation: aurora-drift-b 21s ease-in-out infinite;
+}
+
+/* Hero background — slow hue drift across the blended aurora layer */
+@keyframes hue-drift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(35deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+.animate-hue-drift {
+  animation: hue-drift 40s ease-in-out infinite;
+}
+
+/* Hero background — faint drifting dot-grid */
+@keyframes grid-pan {
+  0% { background-position: 0 0; }
+  100% { background-position: 56px 56px; }
+}
+
+.animate-grid-pan {
+  animation: grid-pan 40s linear infinite;
+}
+
+/* Hero background — floating ember / dust particles */
+@keyframes ember-float {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  12% { opacity: var(--particle-opacity, 0.5); }
+  88% { opacity: var(--particle-opacity, 0.5); }
+  100% { transform: translateY(-90px) scale(0.5); opacity: 0; }
+}
+
+.animate-ember {
+  animation-name: ember-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 /* Scrollbar */
