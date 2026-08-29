@@ -261,7 +261,6 @@ export const en: Translations = {
     heading: "The quote is free",
     subheading:
       "Tell us in a couple of lines what's costing you time or clients. We'll reply within 24 hours with a concrete idea of what to do, and what it costs. No spam, no pressure.",
-    urgency: "Now accepting new projects · limited slots",
     guarantee: "Free quote within 24h",
     fastResponse: "Same-day response",
     bookCall: "Prefer to talk directly?",

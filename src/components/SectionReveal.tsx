@@ -1,28 +1,22 @@
-import { useRef, type ReactNode } from "react";
-import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
+import { type ReactNode } from "react";
+import { motion } from "framer-motion";
 
 /**
  * Wraps a section so it materializes as it scrolls into place — fade,
- * a soft blur dissolving into focus, a rise, and a slight scale-in, all
- * tied to the same scroll progress (not a one-shot trigger). Resolves to
- * a fully sharp, settled state well before the section is fully in view,
- * so nothing stays blurred or interferes with its own content.
+ * a soft blur dissolving into focus, a rise, and a slight scale-in.
+ * Triggered once via viewport intersection rather than tied to exact
+ * scroll-pixel thresholds, so it always resolves to fully visible even
+ * for the last section on the page (no scroll room left past it).
  */
-const SectionReveal = ({ children }: { children: ReactNode }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 95%", "start 40%"] });
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [70, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.96, 1]);
-  const blurPx = useTransform(scrollYProgress, [0, 1], [10, 0]);
-  const filter = useMotionTemplate`blur(${blurPx}px)`;
-
-  return (
-    <motion.div ref={ref} style={{ opacity, y, scale, filter }}>
-      {children}
-    </motion.div>
-  );
-};
+const SectionReveal = ({ children }: { children: ReactNode }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 70, scale: 0.96, filter: "blur(10px)" }}
+    whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default SectionReveal;

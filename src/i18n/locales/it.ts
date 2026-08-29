@@ -259,7 +259,6 @@ export const it = {
     heading: "Il preventivo è gratis",
     subheading:
       "Raccontaci in due righe cosa ti fa perdere tempo o clienti. Ti rispondiamo entro 24 ore con un'idea concreta di cosa fare, e quanto costa. Nessuno spam, nessuna pressione.",
-    urgency: "Stiamo accettando nuovi progetti · slot limitati",
     guarantee: "Preventivo gratuito entro 24h",
     fastResponse: "Risposta in giornata",
     bookCall: "Preferisci parlare direttamente?",

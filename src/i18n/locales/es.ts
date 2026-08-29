@@ -261,7 +261,6 @@ export const es: Translations = {
     heading: "El presupuesto es gratis",
     subheading:
       "Cuéntanos en dos líneas qué te hace perder tiempo o clientes. Te respondemos en 24 horas con una idea concreta de qué hacer, y cuánto cuesta. Sin spam, sin presión.",
-    urgency: "Aceptando nuevos proyectos · plazas limitadas",
     guarantee: "Presupuesto gratuito en 24h",
     fastResponse: "Respuesta el mismo día",
     bookCall: "¿Prefieres hablar directamente?",

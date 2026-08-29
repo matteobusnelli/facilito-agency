@@ -90,15 +90,6 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto text-center mb-10"
         >
-          {/* Urgency signal */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-400/25 bg-amber-400/[0.1] text-amber-300 text-xs font-semibold mb-6">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
-            </span>
-            {t.contact.urgency}
-          </div>
-
           <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
             {t.contact.eyebrow}
           </p>
