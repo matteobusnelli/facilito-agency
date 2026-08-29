@@ -2,7 +2,7 @@ import type { Translations } from "./it";
 
 export const en: Translations = {
   meta: {
-    title: "Facilito Agency — Websites, Management Systems, Automation & Marketing",
+    title: "Facilito Agency: Websites, Management Systems, Automation & Marketing",
     description:
       "Websites, custom management systems, automation, and marketing to grow your business: more clients, lower costs. Free quote in 24h.",
   },
@@ -14,13 +14,13 @@ export const en: Translations = {
     cta: "Free quote",
   },
   hero: {
-    badge: "Digital solutions for small businesses",
-    line1: "More clients.",
-    line2: "Lower costs.",
-    line3: "Zero hassle.",
+    badge: "For local businesses and small companies who want to run smoother",
+    line1: "More clients",
+    line2: "Less busywork",
+    line3: "Zero hassle",
     description:
-      "Websites, management systems, automations and marketing built to grow your business — no tech jargon, no price surprises.",
-    cta: "Get your free quote",
+      "Website, management system, automation and marketing built around how you work, not the other way round. Fixed price, no surprises, ready in days.",
+    cta: "Let's look at your business",
     secondary: "How it works",
     bookCall: "Or book a free call",
     trust: ["Free quote in 24h", "Fixed price, no surprises", "Results in days, not months"],
@@ -30,21 +30,39 @@ export const en: Translations = {
       { value: "24h", label: "Free quote" },
     ],
   },
+  problem: {
+    eyebrow: "Sound familiar?",
+    heading: "If you're doing something by hand for the 50th time, maybe it shouldn't be a 51st",
+    points: [
+      "You answer the same questions, the same way, every day.",
+      "Bookings, requests and quotes are split between WhatsApp, Excel and a notebook.",
+      "You have a website, but nobody contacts you from it.",
+      "Your business is growing, but running it keeps getting more complicated.",
+      "You're not sure how much the things you do by hand are actually costing you.",
+    ],
+    reframeHeading: "You don't need \"more technology\"\nYou need to stop losing time and clients",
+    reframeBody:
+      "We don't sell websites, management systems or automation as the end product. We use them to get you to a specific result: more clients, less manual work, more control. First we find out where you're losing time, clients or money. Then we build only what actually helps. Nothing more.",
+  },
   services: {
     heading: "Everything you need to grow",
     subheading: "Website, management system, automation and marketing. Fixed prices, measurable results.",
+    categories: ["Get found and sell more", "Save you time", "Help you run things better"],
+    cta: "Let's talk about your business",
     items: [
       {
         number: "01",
+        hook: "The salesperson who never takes a day off",
         title: "Professional Website",
         tag: "Live in 7 days",
         description:
-          "Your best salesperson, always on. A site that brings in new clients, tells your story, and works flawlessly on every screen — ready in a week.",
+          "Your best salesperson, always on. A site that brings in new clients, tells your story, and works flawlessly on every screen. Ready in a week.",
         highlights: ["Custom design, never a template", "SEO optimized for Google", "Update it yourself, no developer needed"],
         cta: "I want my website →",
       },
       {
         number: "02",
+        hook: "Stop chasing spreadsheets and sticky notes",
         title: "Custom Management System",
         tag: "By quote",
         description:
@@ -54,15 +72,17 @@ export const en: Translations = {
       },
       {
         number: "03",
+        hook: "Let the machine handle the repetitive part",
         title: "Automation",
         tag: "Save 5+ hours every week",
         description:
-          "Invoices, reminders, reports: all automatic. The time you lose on repetitive tasks comes back to you — use it to grow the business.",
+          "Invoices, reminders, reports: all automatic. The time you lose on repetitive tasks comes back to you. Use it to grow the business.",
         highlights: ["Integrates with your tools", "Workflows built around your work", "Ongoing support, always included"],
         cta: "Automate my work →",
       },
       {
         number: "04",
+        hook: "A brand people recognize, without you thinking about it",
         title: "Marketing & Brand Identity",
         tag: "Fresh content, every week",
         description:
@@ -73,8 +93,9 @@ export const en: Translations = {
     ],
   },
   why: {
-    heading: "Why choose Facilito",
-    subheading: "A small team, clear goals: more revenue, lower costs, zero stress.",
+    heading: "The agency that doesn't sell technology. It makes your business run better",
+    subheading:
+      "We don't sell you what you don't need. First we find out where you're losing time, clients or money. Then we build only the right tool, fixed price, no surprises.",
     items: [
       {
         title: "Actually fast",
@@ -93,10 +114,56 @@ export const en: Translations = {
         description: "We don't disappear after delivery. Direct contact, always available.",
       },
     ],
+    caseStudyEyebrow: "Case study",
+    caseStudyHeading1: "Real projects.",
+    caseStudyHeading2: "Real results.",
+    caseStudySubheading:
+      "Every project starts from a real need and delivers measurable results. Here are a few examples of businesses that chose Facilito.",
+    caseStudyCtaAll: "See all projects",
+    portfolioCtaLabel: "View project",
+    portfolio: [
+      {
+        type: "website",
+        category: "Website",
+        title: "Bianchi Dental Practice",
+        description: "New website, modern and fast. More bookings and more patients.",
+        stat: "+73%",
+        statLabel: "increase in inquiries",
+      },
+      {
+        type: "cms",
+        category: "Management system",
+        title: "Beauty Center Elegance",
+        description: "Custom management system for bookings, clients and payments. All in one place.",
+        stat: "+62%",
+        statLabel: "returning clients",
+      },
+      {
+        type: "automation",
+        category: "Automation",
+        title: "Law Firm Automation",
+        description: "Automations that cut repetitive work and improved client management.",
+        stat: "-70%",
+        statLabel: "manual work",
+      },
+      {
+        type: "brand",
+        category: "Brand & Marketing",
+        title: "La Corte Restaurant",
+        description: "Targeted social strategy and advertising. Full tables, every week.",
+        stat: "+85%",
+        statLabel: "online bookings",
+      },
+    ],
+    portfolioDisclaimer: "Demo projects for illustration purposes.",
   },
   process: {
+    eyebrow: "Process",
     heading: "How it works",
     subheading: "From idea to launch in 3 steps. Simpler than you think.",
+    intro:
+      "We never start by building. We start by understanding where you're losing time, clients or money, then we only suggest what actually helps. Here's what happens from the moment you write to us to the moment you're live.",
+    cta: "Find out what you can automate",
     steps: [
       {
         number: "01",
@@ -108,7 +175,7 @@ export const en: Translations = {
         number: "02",
         title: "We build everything",
         duration: "5–7 days",
-        description: "Design, development, content — we stay in touch every step. No jargon, just results.",
+        description: "Design, development, content: we stay in touch every step. No jargon, just results.",
       },
       {
         number: "03",
@@ -121,7 +188,7 @@ export const en: Translations = {
   testimonials: {
     heading: "What clients say",
     subheading: "Real clients. Real results.",
-    cta: "Join them — free quote",
+    cta: "Join them, free quote",
     items: [
       {
         name: "Marco R.",
@@ -143,13 +210,59 @@ export const en: Translations = {
       },
     ],
   },
+  faq: {
+    eyebrow: "Frequently asked",
+    heading: "The most common objections. Answered directly",
+    items: [
+      {
+        q: "I'm not good with technology",
+        a: "You don't need to be. We talk about your business, not servers and code. If something needs a technical choice, we explain it in two sentences, not a manual.",
+      },
+      {
+        q: "I don't know what I need",
+        a: "That's normal, it's not your job to know. It's the first step of our analysis: we start from what's costing you time or clients, not a list of services you have to pick yourself.",
+      },
+      {
+        q: "I already have a website",
+        a: "Good, then the problem probably isn't \"having a website\", it's what it's doing (or not doing) for you. We look at it together before proposing anything new.",
+      },
+      {
+        q: "I already have a management system",
+        a: "If it works, we won't change it on principle. It's only worth touching if it's genuinely costing you time or money. We find that out before talking about solutions.",
+      },
+      {
+        q: "It costs too much",
+        a: "We'll tell you exactly, with a fixed quote within 24 hours, before you decide anything. Zero surprises during the project: what we agree is what you pay.",
+      },
+      {
+        q: "I don't have time to manage a project",
+        a: "We do most of the work. We only need your time for one call at the start and a few minutes to check what we build. Not a project that eats up your weeks.",
+      },
+      {
+        q: "My business is too small",
+        a: "It's exactly who we work best with: local businesses, professionals, small companies. We won't pitch you solutions built for companies ten times your size.",
+      },
+      {
+        q: "I don't know if automation actually helps my business",
+        a: "Often we don't either, until we look at how you work. If there's no real time or money saved, we'll tell you. We don't push automation for its own sake.",
+      },
+      {
+        q: "I'm worried it'll be complicated",
+        a: "The path is the same for every client: tell us the project, we build, you go live, and you're only involved where it actually matters.",
+      },
+      {
+        q: "I don't want to change everything",
+        a: "You don't have to. We can work on one specific problem if that's what you need. We won't pitch a bigger project than you actually need.",
+      },
+    ],
+  },
   contact: {
-    heading: "The quote is free.",
+    eyebrow: "Contact",
+    heading: "The quote is free",
     subheading:
-      "Send us a message — we'll reply within 24 hours with a tailored offer built to help you grow: more clients, lower costs. No spam, no pressure.",
+      "Tell us in a couple of lines what's costing you time or clients. We'll reply within 24 hours with a concrete idea of what to do, and what it costs. No spam, no pressure.",
     urgency: "Now accepting new projects · limited slots",
     guarantee: "Free quote within 24h",
-    noSpam: "Zero spam, ever",
     fastResponse: "Same-day response",
     bookCall: "Prefer to talk directly?",
     bookCallCta: "Book a call",
@@ -205,7 +318,7 @@ export const en: Translations = {
     autoNode3: "CRM Updated",
     autoNode4: "Invoice Ready",
     autoFooter: "Active flow · last run 2 min ago",
-    dashTitle: "CRM — Clients",
+    dashTitle: "CRM · Clients",
     dashColName: "Client",
     dashColService: "Service",
     dashColStatus: "Status",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,29 +6,31 @@
 
 @layer base {
   :root {
-    /* Base */
-    --background: 0 0% 99%;
-    --foreground: 240 8% 6%;
+    color-scheme: dark;
+
+    /* Base — the whole site is one continuous dark scene, same tone as the hero */
+    --background: 250 45% 3%;
+    --foreground: 0 0% 98%;
 
     /* Cards */
-    --card: 0 0% 100%;
-    --card-foreground: 240 8% 6%;
+    --card: 250 30% 6%;
+    --card-foreground: 0 0% 98%;
 
     /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 8% 6%;
+    --popover: 250 30% 6%;
+    --popover-foreground: 0 0% 98%;
 
     /* Primary — Electric Indigo */
     --primary: 252 91% 63%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary */
-    --secondary: 240 5% 94%;
-    --secondary-foreground: 240 8% 6%;
+    --secondary: 250 20% 10%;
+    --secondary-foreground: 0 0% 98%;
 
     /* Muted */
-    --muted: 240 4% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 250 15% 10%;
+    --muted-foreground: 250 8% 65%;
 
     /* Accent — Warm Amber */
     --accent: 38 98% 58%;
@@ -39,15 +41,15 @@
     --destructive-foreground: 0 0% 100%;
 
     /* Border / Input */
-    --border: 240 5% 90%;
-    --input: 240 5% 90%;
+    --border: 250 15% 16%;
+    --input: 250 15% 16%;
     --ring: 252 91% 63%;
 
     --radius: 0.75rem;
 
-    /* Surface */
-    --surface: 240 5% 96%;
-    --surface-foreground: 240 8% 6%;
+    /* Surface — kept as an alias of --background so no section ever reads as a separate block */
+    --surface: 250 45% 3%;
+    --surface-foreground: 0 0% 98%;
 
     /* Hero — near-black, matches reference art background */
     --hero: 250 45% 3%;
@@ -85,11 +87,10 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -136,6 +137,7 @@
     background-image: radial-gradient(circle, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
     background-size: 28px 28px;
   }
+
 
   .shadow-primary {
     box-shadow: var(--shadow-primary);
@@ -229,11 +231,40 @@
   animation-iteration-count: infinite;
 }
 
+/* Intro reveal — the rest of the page (nav, hero copy, everything besides
+   the brand graphic) fades in on load. The graphic itself is handled by a
+   Framer Motion layoutId FLIP (see IntroOverlay / HeroSection) so it
+   physically travels from centered-fullscreen to its spot in the hero,
+   rather than crossfading. */
+@keyframes intro-content-in {
+  0%, 66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-intro-content-in {
+  animation: intro-content-in 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-intro-content-in {
+    animation-duration: 0.01s;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: hsl(var(--muted)); }
 ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* Hide scrollbar on horizontally-dragged shelves (PortfolioShelf) while keeping native scroll/swipe */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
 /* Selection */
 ::selection {

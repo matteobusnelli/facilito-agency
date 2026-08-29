@@ -86,12 +86,18 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
   const cY = useTransform(springY, (v) => v * 16);
 
   return (
-    <div aria-hidden className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Faint animated dot-grid, fading toward the edges */}
-      <div
-        className="absolute inset-0 bg-dot-grid opacity-[0.05] animate-grid-pan"
-        style={{ maskImage: "radial-gradient(ellipse 80% 65% at 50% 45%, black, transparent)" }}
-      />
+    <div
+      aria-hidden
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      style={{
+        maskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 96%)",
+        WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 96%)",
+      }}
+    >
+      {/* Base dot-grid + solid color come from the page-wide AmbientBackground behind this
+          section — this layer only adds the hero's extra mouse-reactive flair on top of it.
+          It fades out (via mask) well before the section's own bottom edge, so the hand-off
+          to the shared background below is gradual instead of being clipped mid-brightness. */}
 
       {/* Aurora — blend-screened and hue-drifting as one continuous wash */}
       <div className="absolute inset-0 animate-hue-drift">
@@ -190,12 +196,6 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
           }}
         />
       ))}
-
-      {/* Bottom fade into content background */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--hero)))" }}
-      />
     </div>
   );
 };

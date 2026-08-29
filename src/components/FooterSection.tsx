@@ -19,7 +19,7 @@ const FooterSection = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative bg-hero border-t border-white/[0.06] overflow-hidden">
+    <footer className="relative overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-[6%] w-[420px] h-[420px] rounded-full mix-blend-screen"

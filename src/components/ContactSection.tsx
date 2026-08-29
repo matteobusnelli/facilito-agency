@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircle2, BadgeCheck, Zap, ShieldCheck, Calendar, AlertCircle } from "lucide-react";
+import { CheckCircle2, BadgeCheck, Zap, Calendar, AlertCircle } from "lucide-react";
 import { useTranslation } from "@/i18n";
 
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
@@ -73,81 +73,86 @@ const ContactSection = () => {
 
   const guarantees = [
     { icon: BadgeCheck, label: t.contact.guarantee, color: "hsl(252 91% 65%)", tint: "hsl(252 91% 60% / 0.1)" },
-    { icon: ShieldCheck, label: t.contact.noSpam, color: "hsl(271 81% 65%)", tint: "hsl(271 81% 60% / 0.1)" },
     { icon: Zap, label: t.contact.fastResponse, color: "hsl(25 95% 55%)", tint: "hsl(25 95% 50% / 0.1)" },
   ];
 
   const inputCls =
-    "w-full h-11 px-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors";
+    "w-full h-11 px-4 rounded-lg border border-white/15 bg-white/[0.05] text-white text-sm placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors";
 
   return (
-    <section id="contatti" className="py-28 md:py-36 bg-surface">
+    <section id="contatti" className="py-28 md:py-36">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
+        {/* Centered header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl mx-auto text-center mb-10"
+        >
+          {/* Urgency signal */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-400/25 bg-amber-400/[0.1] text-amber-300 text-xs font-semibold mb-6">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+            </span>
+            {t.contact.urgency}
+          </div>
 
-          {/* ── Left column ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="md:sticky md:top-24"
-          >
-            {/* Urgency signal */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-500/25 bg-amber-500/[0.08] text-amber-700 dark:text-amber-300/90 text-xs font-semibold mb-6">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
+            {t.contact.eyebrow}
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-5 leading-tight text-white">
+            {t.contact.heading}
+          </h2>
+          <p className="text-white/60 leading-relaxed text-lg">
+            {t.contact.subheading}
+          </p>
+        </motion.div>
+
+        {/* Guarantees — centered row */}
+        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-10">
+          {guarantees.map(({ icon: Icon, label, color, tint }, i) => (
+            <motion.li
+              key={label}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="flex items-center gap-2.5 text-sm text-white"
+            >
+              <span className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: tint }}>
+                <Icon className="w-4 h-4" style={{ color }} />
               </span>
-              {t.contact.urgency}
-            </div>
+              {label}
+            </motion.li>
+          ))}
+        </ul>
 
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
-              Contatti
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-5 leading-tight">
-              {t.contact.heading}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
-              {t.contact.subheading}
-            </p>
+        {/* Calendly CTA */}
+        {CALENDLY_URL && (
+          <div className="max-w-sm mx-auto mb-10 p-5 rounded-xl border border-primary/25 bg-primary/[0.08] text-center">
+            <p className="text-sm font-semibold mb-1 text-white">{t.contact.bookCall}</p>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+            >
+              <Calendar className="w-4 h-4" />
+              {t.contact.bookCallCta}
+            </a>
+          </div>
+        )}
 
-            {/* Guarantees */}
-            <ul className="space-y-3">
-              {guarantees.map(({ icon: Icon, label, color, tint }) => (
-                <li key={label} className="flex items-center gap-3 text-sm text-foreground">
-                  <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: tint }}>
-                    <Icon className="w-4 h-4" style={{ color }} />
-                  </span>
-                  {label}
-                </li>
-              ))}
-            </ul>
-
-            {/* Calendly CTA */}
-            {CALENDLY_URL && (
-              <div className="mt-10 p-5 rounded-xl border border-primary/20 bg-primary/[0.04]">
-                <p className="text-sm font-semibold mb-1">{t.contact.bookCall}</p>
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-                >
-                  <Calendar className="w-4 h-4" />
-                  {t.contact.bookCallCta}
-                </a>
-              </div>
-            )}
-          </motion.div>
-
-          {/* ── Right column — form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+        {/* Form — centered as a card; labels stay left-aligned inside it for readability */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="max-w-lg mx-auto"
+        >
             <AnimatePresence mode="wait">
               {/* ── Success state ── */}
               {status === "success" ? (
@@ -156,13 +161,13 @@ const ContactSection = () => {
                   initial={{ opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col items-center justify-center text-center p-10 rounded-2xl bg-background border border-border min-h-[420px]"
+                  className="flex flex-col items-center justify-center text-center p-10 rounded-2xl bg-white/[0.05] border border-white/[0.08] backdrop-blur-sm min-h-[420px]"
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                  <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mb-5">
                     <CheckCircle2 className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{f.successTitle}</h3>
-                  <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+                  <h3 className="text-xl font-bold mb-3 text-white">{f.successTitle}</h3>
+                  <p className="text-white/60 text-sm max-w-xs leading-relaxed">
                     {f.successMessage}
                   </p>
 
@@ -171,7 +176,7 @@ const ContactSection = () => {
                       href={CALENDLY_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary text-sm font-semibold hover:bg-primary/5 transition-colors"
+                      className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors"
                     >
                       <Calendar className="w-4 h-4" />
                       {t.contact.bookCallCta}
@@ -180,7 +185,7 @@ const ContactSection = () => {
 
                   <button
                     onClick={() => setStatus("idle")}
-                    className="mt-6 text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+                    className="mt-6 text-xs text-white/50 underline underline-offset-4 hover:text-white transition-colors"
                   >
                     {f.sendAnother}
                   </button>
@@ -194,7 +199,7 @@ const ContactSection = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit(onSubmit)}
-                  className="p-8 rounded-2xl bg-background border border-border space-y-5"
+                  className="p-8 rounded-2xl bg-white/[0.05] border border-white/[0.08] backdrop-blur-sm space-y-5"
                   noValidate
                 >
                   {/* Honeypot — off-screen, not zero-height, so Chrome autofill ignores it */}
@@ -212,7 +217,7 @@ const ContactSection = () => {
 
                   {/* Server error banner */}
                   {status === "error" && serverError && (
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-destructive/8 border border-destructive/20 text-sm text-destructive">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-destructive/10 border border-destructive/25 text-sm text-red-300">
                       <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
                       <span>{serverError}</span>
                     </div>
@@ -220,7 +225,7 @@ const ContactSection = () => {
 
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-medium mb-1.5" htmlFor="name">
+                    <label className="block text-sm font-medium mb-1.5 text-white/80" htmlFor="name">
                       {f.name}
                     </label>
                     <input
@@ -238,7 +243,7 @@ const ContactSection = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-medium mb-1.5" htmlFor="email">
+                    <label className="block text-sm font-medium mb-1.5 text-white/80" htmlFor="email">
                       {f.email}
                     </label>
                     <input
@@ -256,7 +261,7 @@ const ContactSection = () => {
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-sm font-medium mb-1.5" htmlFor="phone">
+                    <label className="block text-sm font-medium mb-1.5 text-white/80" htmlFor="phone">
                       {f.phone}
                     </label>
                     <input
@@ -274,7 +279,7 @@ const ContactSection = () => {
 
                   {/* Service */}
                   <div>
-                    <label className="block text-sm font-medium mb-1.5" htmlFor="service">
+                    <label className="block text-sm font-medium mb-1.5 text-white/80" htmlFor="service">
                       {f.service}
                     </label>
                     <select
@@ -295,7 +300,7 @@ const ContactSection = () => {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium mb-1.5" htmlFor="message">
+                    <label className="block text-sm font-medium mb-1.5 text-white/80" htmlFor="message">
                       {f.message}
                     </label>
                     <textarea
@@ -303,7 +308,7 @@ const ContactSection = () => {
                       rows={4}
                       placeholder={f.messagePlaceholder}
                       {...register("message")}
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-white/15 bg-white/[0.05] text-white text-sm placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
                     />
                     {errors.message && (
                       <p className="text-destructive text-xs mt-1.5">{errors.message.message}</p>
@@ -314,7 +319,7 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 rounded-full bg-gradient-warm text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full h-12 rounded-full bg-gradient-warm text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                     style={{ boxShadow: "0 8px 24px -4px hsl(25 95% 55% / 0.35)" }}
                   >
                     {isSubmitting ? (
@@ -326,15 +331,10 @@ const ContactSection = () => {
                       f.submit
                     )}
                   </button>
-
-                  <p className="text-center text-xs text-muted-foreground">
-                    {t.contact.noSpam}
-                  </p>
                 </motion.form>
               )}
             </AnimatePresence>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

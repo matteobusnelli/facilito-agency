@@ -1,6 +1,6 @@
 export const it = {
   meta: {
-    title: "Facilito Agency — Siti Web, Gestionali, Automazioni e Marketing",
+    title: "Facilito Agency: Siti Web, Gestionali, Automazioni e Marketing",
     description:
       "Siti web, gestionali su misura, automazioni e marketing per far crescere la tua attività: più clienti, meno costi. Preventivo gratuito in 24h.",
   },
@@ -12,13 +12,13 @@ export const it = {
     cta: "Preventivo gratuito",
   },
   hero: {
-    badge: "Digital solutions per piccole attività",
-    line1: "Più clienti.",
-    line2: "Meno costi.",
-    line3: "Zero pensieri.",
+    badge: "Per attività locali e piccole imprese che vogliono lavorare meglio",
+    line1: "Più clienti",
+    line2: "Meno sprechi",
+    line3: "Zero pensieri",
     description:
-      "Siti web, gestionali, automazioni e marketing fatti per far crescere la tua attività — senza tecnicismi e senza sorprese sul prezzo.",
-    cta: "Ottieni il preventivo gratis",
+      "Sito, gestionale, automazioni e marketing pensati sul tuo modo di lavorare, non il contrario. Prezzo fisso, nessuna sorpresa, pronto in pochi giorni.",
+    cta: "Analizziamo la tua attività",
     secondary: "Come funziona",
     bookCall: "Oppure prenota una chiamata gratuita",
     trust: ["Preventivo gratuito in 24h", "Prezzo fisso, nessuna sorpresa", "Risultati in pochi giorni, non mesi"],
@@ -28,21 +28,39 @@ export const it = {
       { value: "24h", label: "Preventivo gratuito" },
     ],
   },
+  problem: {
+    eyebrow: "Ti dice niente?",
+    heading: "Se fai una cosa 50 volte a mano, forse non dovresti farla la 51esima",
+    points: [
+      "Rispondi sempre alle stesse domande, sempre allo stesso modo.",
+      "Gestisci prenotazioni, richieste e preventivi tra WhatsApp, Excel e un quaderno.",
+      "Hai un sito, ma nessuno ti scrive da lì.",
+      "La tua attività cresce, ma organizzarla è sempre più complicato.",
+      "Non sai bene quanto ti costano, ogni mese, le cose che fai a mano.",
+    ],
+    reframeHeading: "Non ti serve \"più tecnologia\"\nTi serve smettere di perdere tempo e clienti",
+    reframeBody:
+      "Non vendiamo siti, gestionali o automazioni come prodotto finale. Li usiamo come mezzo per farti arrivare a un risultato preciso: più clienti, meno lavoro manuale, più controllo. Prima capiamo dove stai perdendo tempo, clienti o denaro. Poi costruiamo solo quello che serve davvero. Niente di più.",
+  },
   services: {
     heading: "Tutto quello che ti serve per crescere",
     subheading: "Sito, gestionale, automazioni e marketing. Prezzi fissi, risultati misurabili.",
+    categories: ["Farti trovare e vendere di più", "Farti risparmiare tempo", "Farti lavorare meglio"],
+    cta: "Parliamo del tuo business",
     items: [
       {
         number: "01",
+        hook: "Il venditore che non va mai in ferie",
         title: "Sito Web Professionale",
         tag: "Online in 7 giorni",
         description:
-          "Il tuo miglior venditore, sempre acceso. Un sito che porta clienti nuovi, racconta chi sei e funziona alla perfezione su ogni schermo — pronto in una settimana.",
+          "Il tuo miglior venditore, sempre acceso. Un sito che porta clienti nuovi, racconta chi sei e funziona alla perfezione su ogni schermo. Pronto in una settimana.",
         highlights: ["Design su misura, mai template", "Ottimizzato per Google (SEO)", "Lo aggiorni tu, in autonomia"],
         cta: "Voglio il mio sito →",
       },
       {
         number: "02",
+        hook: "Basta rincorrere Excel e post-it",
         title: "Gestionale su Misura",
         tag: "Su preventivo",
         description:
@@ -52,15 +70,17 @@ export const it = {
       },
       {
         number: "03",
+        hook: "Le cose ripetitive le fa la macchina, tu no",
         title: "Automazioni",
         tag: "Risparmia 5+ ore a settimana",
         description:
-          "Fatture, promemoria, report: tutto automatico. Il tempo che perdi in attività ripetitive torna a essere tuo — e lo usi per far crescere il business.",
+          "Fatture, promemoria, report: tutto automatico. Il tempo che perdi in attività ripetitive torna a essere tuo. Usalo per far crescere il business.",
         highlights: ["Si integra con i tuoi strumenti", "Flussi su misura per il tuo lavoro", "Supporto continuo, sempre incluso"],
         cta: "Automatizza il mio lavoro →",
       },
       {
         number: "04",
+        hook: "Un brand che si riconosce, senza doverci pensare tu",
         title: "Marketing & Brand Identity",
         tag: "Contenuti pronti, ogni settimana",
         description:
@@ -71,8 +91,9 @@ export const it = {
     ],
   },
   why: {
-    heading: "Perché scegliere Facilito",
-    subheading: "Un team piccolo, obiettivi chiari: più fatturato, meno costi, zero stress.",
+    heading: "L'agenzia che non vende tecnologia. Fa funzionare meglio la tua attività",
+    subheading:
+      "Non ti vendiamo quello che non ti serve. Prima capiamo dove perdi tempo, clienti o denaro. Poi costruiamo solo lo strumento giusto, a prezzo fisso, senza sorprese.",
     items: [
       {
         title: "Veloci davvero",
@@ -91,10 +112,56 @@ export const it = {
         description: "Non spariamo dopo la consegna. Un contatto diretto, sempre disponibile.",
       },
     ],
+    caseStudyEyebrow: "Case study",
+    caseStudyHeading1: "Progetti reali.",
+    caseStudyHeading2: "Risultati concreti.",
+    caseStudySubheading:
+      "Ogni progetto nasce da un'esigenza reale e porta risultati misurabili. Ecco alcuni esempi di attività che hanno scelto Facilito.",
+    caseStudyCtaAll: "Vedi tutti i progetti",
+    portfolioCtaLabel: "Vedi progetto",
+    portfolio: [
+      {
+        type: "website",
+        category: "Sito Web",
+        title: "Studio Dentistico Bianchi",
+        description: "Nuovo sito web, moderno e veloce. Più prenotazioni e più pazienti.",
+        stat: "+73%",
+        statLabel: "di contatti ricevuti",
+      },
+      {
+        type: "cms",
+        category: "Gestionale",
+        title: "Beauty Center Elegance",
+        description: "Gestionale su misura per prenotazioni, clienti e pagamenti. Tutto in un unico posto.",
+        stat: "+62%",
+        statLabel: "di clienti fidelizzati",
+      },
+      {
+        type: "automation",
+        category: "Automazione",
+        title: "Automazione Studio Legale",
+        description: "Automazioni che hanno ridotto il lavoro ripetitivo e migliorato la gestione dei clienti.",
+        stat: "-70%",
+        statLabel: "di attività manuali",
+      },
+      {
+        type: "brand",
+        category: "Brand & Marketing",
+        title: "Ristorante La Corte",
+        description: "Strategia social e advertising mirata. Tavoli pieni, ogni settimana.",
+        stat: "+85%",
+        statLabel: "di prenotazioni online",
+      },
+    ],
+    portfolioDisclaimer: "Progetti dimostrativi a scopo illustrativo.",
   },
   process: {
+    eyebrow: "Processo",
     heading: "Come funziona",
     subheading: "Dall'idea al lancio in 3 passi. Più semplice di quanto pensi.",
+    intro:
+      "Non iniziamo mai costruendo. Iniziamo capendo dove perdi tempo, clienti o denaro, poi ti proponiamo solo quello che serve davvero. Ecco cosa succede da quando ci scrivi a quando sei online.",
+    cta: "Scopri cosa puoi automatizzare",
     steps: [
       {
         number: "01",
@@ -106,7 +173,7 @@ export const it = {
         number: "02",
         title: "Noi costruiamo tutto",
         duration: "5–7 giorni",
-        description: "Design, sviluppo, contenuti — restiamo in contatto a ogni passo. Niente tecnicismi, solo risultati.",
+        description: "Design, sviluppo, contenuti: restiamo in contatto a ogni passo. Niente tecnicismi, solo risultati.",
       },
       {
         number: "03",
@@ -119,7 +186,7 @@ export const it = {
   testimonials: {
     heading: "Dicono di noi",
     subheading: "Clienti reali. Risultati reali.",
-    cta: "Unisciti a loro — preventivo gratis",
+    cta: "Unisciti a loro, preventivo gratis",
     items: [
       {
         name: "Marco R.",
@@ -141,13 +208,59 @@ export const it = {
       },
     ],
   },
+  faq: {
+    eyebrow: "Domande frequenti",
+    heading: "Le obiezioni più comuni. Risposte dirette",
+    items: [
+      {
+        q: "Non sono bravo con la tecnologia",
+        a: "Non devi esserlo. Parliamo della tua attività, non di server e codice. Se una cosa richiede una scelta tecnica, te la spieghiamo in 2 frasi, non in un manuale.",
+      },
+      {
+        q: "Non so di cosa ho bisogno",
+        a: "Normale, non è il tuo lavoro saperlo. È il primo passo della nostra analisi: partiamo da cosa ti fa perdere tempo o clienti, non da un elenco di servizi che devi scegliere da solo.",
+      },
+      {
+        q: "Ho già un sito",
+        a: "Bene, allora il problema probabilmente non è \"avere un sito\" ma quello che sta (o non sta) facendo per te. Lo guardiamo insieme prima di proporti qualsiasi cosa nuova.",
+      },
+      {
+        q: "Ho già un gestionale",
+        a: "Se funziona, non te lo cambiamo per principio. Ha senso intervenire solo se ti sta davvero facendo perdere tempo o soldi. Lo scopriamo prima di parlare di soluzioni.",
+      },
+      {
+        q: "Costa troppo",
+        a: "Sapremo dirtelo con un preventivo fisso entro 24 ore, prima che tu decida qualsiasi cosa. Zero sorprese durante il progetto: quello che concordiamo è quello che paghi.",
+      },
+      {
+        q: "Non ho tempo per seguire un progetto",
+        a: "Il grosso del lavoro lo facciamo noi. Ti chiediamo il tempo di una chiamata all'inizio e pochi minuti per validare quello che costruiamo. Non un progetto che ti assorbe settimane.",
+      },
+      {
+        q: "La mia attività è troppo piccola",
+        a: "È esattamente per chi lavoriamo meglio: attività locali, professionisti, piccole imprese. Non ti proponiamo soluzioni pensate per aziende dieci volte più grandi di te.",
+      },
+      {
+        q: "Non so se l'automazione serve davvero alla mia attività",
+        a: "Spesso non lo sappiamo neanche noi finché non guardiamo come lavori. Se non c'è un risparmio di tempo o denaro concreto, te lo diciamo. Non proponiamo automazioni per il gusto di automatizzare.",
+      },
+      {
+        q: "Ho paura che sia complicato",
+        a: "Il percorso è lo stesso per tutti i clienti: raccontaci il progetto, costruiamo, vai online, con te coinvolto solo dove conta davvero.",
+      },
+      {
+        q: "Non voglio cambiare tutto",
+        a: "Non serve. Interveniamo su un problema specifico se è quello che ti serve. Non ti proponiamo un progetto più grande di quanto ti serva.",
+      },
+    ],
+  },
   contact: {
-    heading: "Il preventivo è gratis.",
+    eyebrow: "Contatti",
+    heading: "Il preventivo è gratis",
     subheading:
-      "Mandaci un messaggio — ti rispondiamo entro 24 ore con un'offerta su misura pensata per farti crescere: più clienti, meno costi. Nessuno spam, nessuna pressione.",
+      "Raccontaci in due righe cosa ti fa perdere tempo o clienti. Ti rispondiamo entro 24 ore con un'idea concreta di cosa fare, e quanto costa. Nessuno spam, nessuna pressione.",
     urgency: "Stiamo accettando nuovi progetti · slot limitati",
     guarantee: "Preventivo gratuito entro 24h",
-    noSpam: "Nessuno spam, mai",
     fastResponse: "Risposta in giornata",
     bookCall: "Preferisci parlare direttamente?",
     bookCallCta: "Prenota una chiamata",
@@ -203,7 +316,7 @@ export const it = {
     autoNode3: "CRM Aggiornato",
     autoNode4: "Fattura Pronta",
     autoFooter: "Flusso attivo · ultima esecuzione 2 min fa",
-    dashTitle: "CRM — Clienti",
+    dashTitle: "CRM · Clienti",
     dashColName: "Cliente",
     dashColService: "Servizio",
     dashColStatus: "Stato",

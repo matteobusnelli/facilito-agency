@@ -59,8 +59,7 @@ Adding a new locale: create `src/i18n/locales/xx.ts` satisfying `Translations`, 
 - `--surface`: `hsl(240 5% 96%)` — alternate section background
 
 **Typography:**
-- Headings: Space Grotesk (700–800 weight, `letter-spacing: -0.02em`)
-- Body: DM Sans (400–600 weight)
+- One typeface everywhere: Space Grotesk. Headings use 700–800 weight with `letter-spacing: -0.02em`; body text uses lighter weights (400–600). Never mix in a second family.
 
 **Key utility classes** (defined in `src/index.css`):
 - `.bg-hero` / `.text-hero-foreground` — dark hero sections
