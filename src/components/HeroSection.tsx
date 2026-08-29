@@ -63,7 +63,7 @@ const HeroSection = ({ showGraphic = true }: { showGraphic?: boolean }) => {
             {/* Headline */}
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white mb-7"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.08] tracking-tight text-white mb-7"
             >
               <span className="block">{t.hero.line1}</span>
               <span className="block">{t.hero.line2}</span>

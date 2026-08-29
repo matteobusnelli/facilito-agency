@@ -39,9 +39,9 @@ const AmbientBackground = () => {
 
   return (
     <div aria-hidden className="fixed inset-0 -z-10 bg-hero overflow-hidden pointer-events-none">
-      <motion.div className="absolute inset-0 bg-dot-grid opacity-[0.05] animate-grid-pan" style={{ y: mid, rotate }} />
+      <motion.div className="absolute inset-0 bg-dot-grid opacity-[0.05] md:animate-grid-pan" style={{ y: mid, rotate }} />
 
-      <div className="absolute inset-0 animate-hue-drift">
+      <div className="absolute inset-0 md:animate-hue-drift">
         <motion.div
           className="absolute top-[8%] right-[-15%] w-[900px] h-[900px] rounded-full mix-blend-screen animate-aurora-a"
           style={{

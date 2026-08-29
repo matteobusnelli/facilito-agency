@@ -88,19 +88,29 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
   return (
     <div
       aria-hidden
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{
-        maskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 96%)",
-        WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent 96%)",
-      }}
+      className="absolute inset-0 overflow-hidden pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_88%,transparent_100%)] lg:[mask-image:linear-gradient(to_bottom,black_0%,black_65%,transparent_96%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_65%,transparent_96%)]"
     >
       {/* Base dot-grid + solid color come from the page-wide AmbientBackground behind this
           section — this layer only adds the hero's extra mouse-reactive flair on top of it.
           It fades out (via mask) well before the section's own bottom edge, so the hand-off
-          to the shared background below is gradual instead of being clipped mid-brightness. */}
+          to the shared background below is gradual instead of being clipped mid-brightness.
+          The mobile fade is pushed much later than desktop's, since content stacks there and
+          the brand graphic can sit well down the section — cutting the glow off early would
+          leave it sitting on flat background instead of inside the same lit scene. */}
+
+      {/* Mobile-only vertical light column — the layout stacks text above the graphic here,
+          so instead of chasing its exact position (which shifts with content length/language),
+          one soft column runs down the center and covers wherever it ends up landing. */}
+      <div
+        className="lg:hidden absolute top-[18%] left-1/2 -ml-[220px] w-[440px] h-[78%] rounded-full mix-blend-screen animate-aurora-a"
+        style={{
+          background: "radial-gradient(ellipse, hsl(25 95% 55% / 0.22) 0%, hsl(280 80% 55% / 0.13) 42%, hsl(254 91% 60% / 0.08) 66%, transparent 82%)",
+          filter: "blur(70px)",
+        }}
+      />
 
       {/* Aurora — blend-screened and hue-drifting as one continuous wash */}
-      <div className="absolute inset-0 animate-hue-drift">
+      <div className="absolute inset-0 md:animate-hue-drift">
         {/* Wide bridge wash, ties both halves into one lit space */}
         <AuroraBlob
           className="absolute top-[6%] left-[8%] w-[1150px] h-[680px]"
@@ -109,9 +119,11 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
           parallaxX={cX}
           parallaxY={cY}
         />
-        {/* Dominant source, centered on the brand graphic itself */}
+        {/* Dominant source, centered on the brand graphic itself (desktop layout only —
+            mobile gets its own vertical column above, since the graphic sits centered
+            below the text there instead of to the right) */}
         <AuroraBlob
-          className="absolute top-[8%] right-[-12%] w-[920px] h-[920px]"
+          className="hidden lg:block absolute top-[8%] right-[-12%] w-[920px] h-[920px]"
           driftClass="animate-aurora-a"
           background="radial-gradient(circle, hsl(25 95% 55% / 0.26) 0%, hsl(300 80% 55% / 0.16) 38%, hsl(254 91% 60% / 0.1) 62%, transparent 78%)"
           parallaxX={aX}
