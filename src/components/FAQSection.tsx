@@ -7,7 +7,7 @@ const FAQSection = () => {
   const { eyebrow, heading, items } = t.faq;
 
   return (
-    <section id="faq" className="py-28 md:py-36">
+    <section id="faq" className="py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div

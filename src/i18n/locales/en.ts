@@ -93,7 +93,7 @@ export const en: Translations = {
     ],
   },
   why: {
-    heading: "The agency that doesn't sell technology. It makes your business run better",
+    heading: "The agency that doesn't sell technology.\nIt makes your business run better",
     subheading:
       "We don't sell you what you don't need. First we find out where you're losing time, clients or money. Then we build only the right tool, fixed price, no surprises.",
     items: [

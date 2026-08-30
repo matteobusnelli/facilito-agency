@@ -15,7 +15,7 @@ const WhyUsSection = () => {
   const { heading, subheading, items } = t.why;
 
   return (
-    <section id="perche-noi" className="py-28 md:py-36">
+    <section id="perche-noi" className="py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-6">
         {/* Centered header */}
         <motion.div
@@ -28,7 +28,7 @@ const WhyUsSection = () => {
           <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
             Facilito
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-5 text-white">{heading}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-5 text-white whitespace-pre-line">{heading}</h2>
           <p className="text-white/60 leading-relaxed text-lg">{subheading}</p>
 
           <a

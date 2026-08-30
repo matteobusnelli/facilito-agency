@@ -51,7 +51,7 @@ const HeroSection = ({ showGraphic = true }: { showGraphic?: boolean }) => {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative lg:min-h-screen flex flex-col justify-center overflow-hidden"
     >
       <HeroBackground mouseX={mouseX} mouseY={mouseY} />
 

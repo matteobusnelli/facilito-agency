@@ -1,4 +1,23 @@
 import { motion, useSpring, useTransform, type MotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// Fewer concurrent particle animations on mobile — each one carries a
+// box-shadow that repaints every frame, and this layer is exactly where
+// scroll jank is worst (the first few seconds, hero still on screen).
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  return isDesktop;
+};
 
 /** Dim ambient dust spread across the whole section. */
 const DUST = Array.from({ length: 18 }, (_, i) => ({
@@ -75,6 +94,7 @@ const AuroraBlob = ({
  * mix-blend-screen and the whole layer drifts through hue over ~40s.
  */
 const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouseY: MotionValue<number> }) => {
+  const isDesktop = useIsDesktop();
   const springX = useSpring(mouseX, { stiffness: 40, damping: 20, mass: 0.5 });
   const springY = useSpring(mouseY, { stiffness: 40, damping: 20, mass: 0.5 });
 
@@ -148,7 +168,7 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
       </div>
 
       {/* Ambient dust, whole section */}
-      {DUST.map((p) => (
+      {DUST.slice(0, isDesktop ? DUST.length : 8).map((p) => (
         <span
           key={p.id}
           className="absolute rounded-full animate-ember"
@@ -168,7 +188,7 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
       ))}
 
       {/* Embers, clustered around the brand graphic */}
-      {EMBERS_RIGHT.map((p) => (
+      {EMBERS_RIGHT.slice(0, isDesktop ? EMBERS_RIGHT.length : 10).map((p) => (
         <span
           key={p.id}
           className="absolute rounded-full animate-ember"
@@ -189,7 +209,7 @@ const HeroBackground = ({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouse
       ))}
 
       {/* Sparser embers framing the text column, same light as the graphic's */}
-      {EMBERS_LEFT.map((p) => (
+      {EMBERS_LEFT.slice(0, isDesktop ? EMBERS_LEFT.length : 5).map((p) => (
         <span
           key={p.id}
           className="absolute rounded-full animate-ember"

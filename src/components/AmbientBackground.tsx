@@ -1,4 +1,25 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// The parallax below recomputes on every scroll pixel for a fixed,
+// full-viewport layer — cheap on desktop, but a real jank source on mobile
+// where it stacks with everything else happening in the first few seconds
+// (intro, hero, section reveals). Mobile keeps the ambient blobs, just
+// pinned in place instead of drifting with scroll.
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  return isDesktop;
+};
 
 const DUST = Array.from({ length: 20 }, (_, i) => ({
   id: `amb-dust-${i}`,
@@ -26,16 +47,18 @@ const EMBERS = Array.from({ length: 16 }, (_, i) => ({
  * per-section blocks — scrolling never changes what's behind the content.
  */
 const AmbientBackground = () => {
+  const isDesktop = useIsDesktop();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 50, damping: 20, mass: 0.5 });
 
   // Each layer drifts a different distance as the page scrolls — a classic
   // parallax depth cue that reads as motion/"wow" the whole way down, while
   // the layer itself never leaves the viewport (still position: fixed).
-  const slow = useTransform(progress, [0, 1], [0, -120]);
-  const mid = useTransform(progress, [0, 1], [0, 160]);
-  const fast = useTransform(progress, [0, 1], [0, -200]);
-  const rotate = useTransform(progress, [0, 1], [0, 25]);
+  // Pinned in place (0) on mobile — see useIsDesktop above.
+  const slow = useTransform(progress, [0, 1], [0, isDesktop ? -120 : 0]);
+  const mid = useTransform(progress, [0, 1], [0, isDesktop ? 160 : 0]);
+  const fast = useTransform(progress, [0, 1], [0, isDesktop ? -200 : 0]);
+  const rotate = useTransform(progress, [0, 1], [0, isDesktop ? 25 : 0]);
 
   return (
     <div aria-hidden className="fixed inset-0 -z-10 bg-hero overflow-hidden pointer-events-none">

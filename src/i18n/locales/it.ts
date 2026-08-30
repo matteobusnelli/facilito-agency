@@ -91,7 +91,7 @@ export const it = {
     ],
   },
   why: {
-    heading: "L'agenzia che non vende tecnologia. Fa funzionare meglio la tua attività",
+    heading: "L'agenzia che non vende tecnologia.\nFa funzionare meglio la tua attività",
     subheading:
       "Non ti vendiamo quello che non ti serve. Prima capiamo dove perdi tempo, clienti o denaro. Poi costruiamo solo lo strumento giusto, a prezzo fisso, senza sorprese.",
     items: [

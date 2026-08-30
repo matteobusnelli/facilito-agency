@@ -6,7 +6,7 @@ const ProcessSection = () => {
   const { heading, subheading, intro, steps } = t.process;
 
   return (
-    <section id="come-funziona" className="py-28 md:py-36">
+    <section id="come-funziona" className="py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div

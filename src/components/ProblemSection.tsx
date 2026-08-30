@@ -6,7 +6,7 @@ const ProblemSection = () => {
   const { eyebrow, heading, points, reframeHeading, reframeBody } = t.problem;
 
   return (
-    <section className="py-28 md:py-36">
+    <section className="py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div

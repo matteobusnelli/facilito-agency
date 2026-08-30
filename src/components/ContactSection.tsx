@@ -80,7 +80,7 @@ const ContactSection = () => {
     "w-full h-11 px-4 rounded-lg border border-white/15 bg-white/[0.05] text-white text-sm placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors";
 
   return (
-    <section id="contatti" className="py-28 md:py-36">
+    <section id="contatti" className="py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-6">
         {/* Centered header */}
         <motion.div
